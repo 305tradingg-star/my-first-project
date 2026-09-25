@@ -1,0 +1,5 @@
+{
+  "plugins": ["nextlevelbuilder/ui-ux-pro-max-skill"],
+  "ai": "claude",
+  "version": "1.0"
+}
