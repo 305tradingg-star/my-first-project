@@ -14,37 +14,27 @@
         :root {
             --gold: #d4af37;
             --dark: #0f0f0f;
-            --light: #f8f8f8;
-            --text: #2c2c2c;
-            --accent: #1a1a1a;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background: var(--light);
-            overflow-x: hidden;
+            color: #333;
+            background: #f8f8f8;
         }
 
         header {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
             color: white;
-            padding: 0;
+            padding: 1.5rem 2rem;
             position: sticky;
             top: 0;
-            z-index: 1000;
+            z-index: 100;
             box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
         }
 
         nav {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 1.2rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -53,31 +43,28 @@
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 1.2rem;
+            gap: 1rem;
         }
 
         .logo-image {
-            width: 80px;
-            height: 80px;
+            width: 75px;
+            height: 75px;
+            background: linear-gradient(135deg, var(--gold), #c49f28);
             border-radius: 50%;
-            overflow: hidden;
-            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
-            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #000;
             border: 3px solid var(--gold);
         }
 
-        .logo-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
         .logo-text h1 {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: var(--gold);
             margin: 0;
             font-weight: 900;
-            letter-spacing: 1.5px;
         }
 
         .logo-text p {
@@ -88,8 +75,8 @@
 
         nav ul {
             display: flex;
+            gap: 2rem;
             list-style: none;
-            gap: 2.5rem;
         }
 
         nav a {
@@ -103,67 +90,60 @@
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 50%, #1f1f1f 100%);
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
             color: white;
-            padding: 8rem 2rem;
+            padding: 6rem 2rem;
             text-align: center;
-            position: relative;
-            overflow: hidden;
         }
 
         .hero h1 {
-            font-size: 4rem;
+            font-size: 3.5rem;
             color: var(--gold);
             margin-bottom: 1rem;
             font-weight: 900;
-            letter-spacing: 2px;
         }
 
         .hero p {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
             color: #ddd;
         }
 
-        .rating-badge {
+        .rating {
             display: inline-block;
-            background: linear-gradient(135deg, var(--gold) 0%, #c49f28 100%);
-            color: var(--dark);
+            background: var(--gold);
+            color: #000;
             padding: 1rem 2rem;
             border-radius: 50px;
             font-weight: 700;
             margin-bottom: 2rem;
-            font-size: 1.2rem;
         }
 
-        .cta-buttons {
+        .buttons {
             display: flex;
-            gap: 1.5rem;
+            gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1.2rem 2.5rem;
+            padding: 1rem 2rem;
             border: 2px solid var(--gold);
             border-radius: 8px;
             text-decoration: none;
             font-weight: 700;
+            font-size: 1rem;
             cursor: pointer;
-            font-size: 1.05rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
             transition: all 0.3s;
         }
 
         .btn-primary {
             background: var(--gold);
-            color: var(--dark);
+            color: #000;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
         }
 
         .btn-secondary {
@@ -182,16 +162,15 @@
         }
 
         section {
-            padding: 6rem 0;
+            padding: 5rem 0;
         }
 
         h2 {
-            font-size: 3rem;
-            color: var(--dark);
+            font-size: 2.8rem;
+            color: #000;
             margin-bottom: 3rem;
             text-align: center;
             font-weight: 900;
-            letter-spacing: 1px;
         }
 
         .services {
@@ -200,18 +179,18 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
         }
 
         .service-card {
-            background: linear-gradient(135deg, var(--accent) 0%, #262626 100%);
+            background: linear-gradient(135deg, #1a1a1a, #262626);
             color: white;
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
+            border: 2px solid rgba(212, 175, 55, 0.2);
             text-align: center;
             transition: all 0.3s;
-            border: 2px solid rgba(212, 175, 55, 0.2);
         }
 
         .service-card:hover {
@@ -227,7 +206,7 @@
 
         .service-card h3 {
             color: var(--gold);
-            font-size: 1.7rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
 
@@ -237,16 +216,16 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .gallery-item {
             border-radius: 12px;
             overflow: hidden;
+            background: #ddd;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             transition: all 0.3s;
-            background: white;
         }
 
         .gallery-item:hover {
@@ -254,20 +233,16 @@
             box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
         }
 
-        .gallery-item-image {
+        .gallery-image {
             width: 100%;
             padding-bottom: 125%;
             position: relative;
-            overflow: hidden;
-        }
-
-        .gallery-item-image img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            background: linear-gradient(135deg, var(--gold), #c49f28);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
         }
 
         .gallery-caption {
@@ -280,7 +255,7 @@
         }
 
         .testimonials {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
             color: white;
         }
 
@@ -291,24 +266,20 @@
         .testimonials-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .testimonial {
             background: rgba(255, 255, 255, 0.08);
-            padding: 2.5rem;
+            padding: 2rem;
             border-radius: 12px;
             border-left: 5px solid var(--gold);
-        }
-
-        .testimonial:hover {
-            background: rgba(255, 255, 255, 0.12);
         }
 
         .stars {
             color: var(--gold);
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             letter-spacing: 2px;
         }
 
@@ -324,13 +295,12 @@
 
         .contact-info h3 {
             color: var(--gold);
-            font-size: 1.4rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
         }
 
         .contact-info p {
-            margin-bottom: 1.2rem;
-            font-size: 1.05rem;
+            margin-bottom: 1rem;
         }
 
         .contact-info a {
@@ -343,7 +313,7 @@
         .contact-form textarea {
             width: 100%;
             padding: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             border: 2px solid #ddd;
             border-radius: 8px;
             font-family: inherit;
@@ -351,11 +321,10 @@
 
         .contact-form textarea {
             min-height: 150px;
-            resize: vertical;
         }
 
         footer {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
             color: white;
             text-align: center;
             padding: 3rem 2rem;
@@ -363,17 +332,9 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            nav ul {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .contact-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
+            .hero h1 { font-size: 2rem; }
+            nav ul { flex-direction: column; gap: 1rem; }
+            .contact-content { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -381,9 +342,7 @@
     <header>
         <nav>
             <div class="logo-section">
-                <div class="logo-image">
-                    <img src="data:image/jpeg;base64,{images[9]}" alt="Downtown Barbers Logo">
-                </div>
+                <div class="logo-image">B</div>
                 <div class="logo-text">
                     <h1>DOWNTOWN BARBERS</h1>
                     <p>Premium Haircuts Since 2021</p>
@@ -399,14 +358,12 @@
     </header>
 
     <section class="hero">
-        <div style="max-width: 900px; margin: 0 auto; position: relative; z-index: 1;">
-            <h1>Downtown Barbers Inc.</h1>
-            <p>Premium Barbershop in Downtown Redding, California</p>
-            <div class="rating-badge">⭐ 4.9/5 from 78 Reviews</div>
-            <div class="cta-buttons">
-                <a href="https://www.instagram.com/downtownbarbersinc/" target="_blank" class="btn btn-primary">Follow Us</a>
-                <a href="tel:+15305605500" class="btn btn-secondary">☎️ Call: +1-530-560-5500</a>
-            </div>
+        <h1>Downtown Barbers Inc.</h1>
+        <p>Premium Barbershop in Downtown Redding, California</p>
+        <div class="rating">⭐ 4.9/5 from 78 Reviews</div>
+        <div class="buttons">
+            <a href="https://www.instagram.com/downtownbarbersinc/" target="_blank" class="btn btn-primary">Follow Us</a>
+            <a href="tel:+15305605500" class="btn btn-secondary">☎️ Call: +1-530-560-5500</a>
         </div>
     </section>
 
@@ -443,51 +400,51 @@
             <h2 id="gallery">Our Work</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[1]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Fresh Cut</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[2]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Expert Styling</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[3]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Precision Cut</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[4]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Clean Fade</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[5]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Sharp Design</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[6]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Classic Look</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[7]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Detailed Work</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[8]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Perfect Finish</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[10]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Fresh Look</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[11]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Premium Cut</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[12]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Master Work</div>
                 </div>
                 <div class="gallery-item">
-                    <div class="gallery-item-image"><img src="data:image/jpeg;base64,{images[13]}" alt="Haircut"></div>
+                    <div class="gallery-image">📸</div>
                     <div class="gallery-caption">Kids Cut</div>
                 </div>
             </div>
@@ -524,7 +481,7 @@
                 <div class="contact-info">
                     <h3>📍 Location</h3>
                     <p>1327 Tehama St<br>Redding, CA 96001</p>
-                    
+
                     <h3 style="margin-top: 2rem;">📞 Contact</h3>
                     <p><a href="tel:+15305605500">☎️ +1-530-560-5500</a></p>
                     <p><a href="https://www.instagram.com/downtownbarbersinc/" target="_blank">📷 Instagram</a></p>
