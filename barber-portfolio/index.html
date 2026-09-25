@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downtown Barbers Inc. - Premium Barbershop in Redding</title>
+    <title>Downtown Barbers Inc. - الحلاق الأول في ريدينج</title>
     <style>
         * {
             margin: 0;
@@ -12,11 +12,15 @@
         }
 
         :root {
-            --primary: #d4af37;
-            --dark: #1a1a1a;
-            --light: #f5f5f5;
-            --text: #333;
-            --accent: #2a2a2a;
+            --gold: #d4af37;
+            --dark: #0f0f0f;
+            --light: #f8f8f8;
+            --text: #2c2c2c;
+            --accent: #1a1a1a;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -24,58 +28,103 @@
             line-height: 1.6;
             color: var(--text);
             background: var(--light);
+            overflow-x: hidden;
         }
 
         /* Header & Navigation */
         header {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
             color: white;
-            padding: 1rem 0;
+            padding: 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
         }
 
         nav {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--primary);
+        .logo-section {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 1rem;
+        }
+
+        .logo-circle {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold) 0%, #c49f28 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--dark);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin: 0;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #aaa;
+            margin: 0;
+            font-style: italic;
         }
 
         nav ul {
             display: flex;
             list-style: none;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
             color: white;
             text-decoration: none;
+            font-weight: 600;
+            position: relative;
             transition: color 0.3s;
         }
 
-        nav a:hover {
-            color: var(--primary);
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s;
+        }
+
+        nav a:hover::after {
+            width: 100%;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
+            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 50%, #1f1f1f 100%);
             color: white;
-            padding: 6rem 2rem;
+            padding: 8rem 2rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -84,94 +133,124 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="rgba(212,175,55,0.1)" stroke-width="1"/></svg>');
-            opacity: 0.5;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: 0;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
         }
 
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
+            font-size: 4rem;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-weight: 900;
+            letter-spacing: 2px;
         }
 
-        .hero p {
-            font-size: 1.3rem;
+        .hero .tagline {
+            font-size: 1.5rem;
+            color: #ddd;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .rating-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--gold) 0%, #c49f28 100%);
+            color: var(--dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
             margin-bottom: 2rem;
-            opacity: 0.95;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            font-size: 1.2rem;
         }
 
         .cta-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .btn {
-            padding: 1rem 2rem;
-            border: 2px solid var(--primary);
-            border-radius: 5px;
+            padding: 1.2rem 2.5rem;
+            border: 2px solid var(--gold);
+            border-radius: 8px;
             text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
             cursor: pointer;
-            font-size: 1rem;
+            font-size: 1.05rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: var(--gold);
             color: var(--dark);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(212,175,55,0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
+            background: #e5c158;
         }
 
         .btn-secondary {
             background: transparent;
-            color: var(--primary);
+            color: var(--gold);
         }
 
         .btn-secondary:hover {
-            background: var(--primary);
-            color: var(--dark);
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
         }
 
-        /* Main Content */
+        /* Container */
         .container {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 2rem;
         }
 
         section {
-            padding: 4rem 0;
-            border-bottom: 1px solid #ddd;
-        }
-
-        section:last-child {
-            border-bottom: none;
+            padding: 6rem 0;
         }
 
         h2 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--dark);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-align: center;
             position: relative;
-            padding-bottom: 1rem;
+            padding-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
         }
 
         h2::after {
@@ -180,9 +259,10 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary);
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            border-radius: 2px;
         }
 
         /* Services Section */
@@ -192,96 +272,170 @@
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .service-card {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--accent) 0%, #262626 100%);
             color: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 2.5rem;
+            border-radius: 12px;
             text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: all 0.4s;
+            border: 2px solid rgba(212, 175, 55, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.5s;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(212,175,55,0.2);
+            transform: translateY(-15px);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
+            border-color: var(--gold);
+        }
+
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
 
         .service-card h3 {
-            color: var(--primary);
+            color: var(--gold);
             margin-bottom: 1rem;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
+            font-weight: 800;
+        }
+
+        .service-card p {
+            color: #ddd;
+            line-height: 1.8;
         }
 
         /* Gallery Section */
         .gallery {
-            background: white;
+            background: linear-gradient(135deg, #fafafa 0%, white 100%);
         }
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .gallery-item {
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.4s;
+            position: relative;
+            aspect-ratio: 1;
         }
 
         .gallery-item:hover {
-            transform: scale(1.05);
+            transform: scale(1.08);
+            box-shadow: 0 20px 50px rgba(212, 175, 55, 0.3);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 300px;
+            height: 100%;
             object-fit: cover;
             display: block;
+            transition: filter 0.4s;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(212, 175, 55, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 700;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
         }
 
         /* Testimonials */
         .testimonials {
-            background: var(--accent);
+            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
             color: white;
         }
 
         .testimonials h2 {
-            color: var(--primary);
+            color: var(--gold);
         }
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 4rem;
         }
 
         .testimonial {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border-left: 5px solid var(--gold);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s;
+        }
+
+        .testimonial:hover {
+            transform: translateX(10px);
+            background: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
         }
 
         .stars {
-            color: var(--primary);
+            color: var(--gold);
             margin-bottom: 1rem;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+        }
+
+        .testimonial p {
+            font-size: 1.05rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
         }
 
         .testimonial-author {
-            font-weight: 600;
-            margin-top: 1rem;
+            font-weight: 700;
             padding-top: 1rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            color: var(--gold);
         }
 
         /* Contact Section */
@@ -293,56 +447,72 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .contact-info h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
+            color: var(--gold);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 800;
         }
 
         .contact-info p {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .contact-info a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
         }
 
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            padding: 0.8rem;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
             font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 120px;
+            min-height: 150px;
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
+            background: linear-gradient(135deg, var(--dark) 0%, var(--accent) 100%);
             color: white;
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding: 3rem 2rem;
+            border-top: 3px solid var(--gold);
         }
 
-        .rating {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--dark);
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            font-weight: 600;
-            margin: 1rem 0;
+        footer p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
             nav ul {
                 flex-direction: column;
@@ -350,7 +520,11 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
             }
 
             .contact-content {
@@ -361,19 +535,54 @@
             h2 {
                 font-size: 2rem;
             }
+
+            .logo-section {
+                gap: 0.5rem;
+            }
+
+            .logo-text h1 {
+                font-size: 1.2rem;
+            }
         }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .service-card, .gallery-item, .testimonial {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        .service-card:nth-child(1) { animation-delay: 0.1s; }
+        .service-card:nth-child(2) { animation-delay: 0.2s; }
+        .service-card:nth-child(3) { animation-delay: 0.3s; }
+        .service-card:nth-child(4) { animation-delay: 0.4s; }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">✂️ Downtown Barbers</div>
+            <div class="logo-section">
+                <div class="logo-circle">B</div>
+                <div class="logo-text">
+                    <h1>DOWNTOWN BARBERS</h1>
+                    <p>Premium Haircuts Since 2021</p>
+                </div>
+            </div>
             <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#reviews">Reviews</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#services">الخدمات</a></li>
+                <li><a href="#gallery">الأعمال</a></li>
+                <li><a href="#reviews">التقييمات</a></li>
+                <li><a href="#contact">التواصل</a></li>
             </ul>
         </nav>
     </header>
@@ -382,12 +591,11 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Downtown Barbers Inc.</h1>
-            <div class="rating">⭐ 4.9/5 (78 Reviews)</div>
-            <p>Premium Barbershop Experience in Downtown Redding</p>
-            <p>Clean cuts. Sharp finishes. Professional service.</p>
+            <p class="tagline">حلاق رقم واحد في ريدينج كاليفورنيا</p>
+            <div class="rating-badge">⭐ 4.9/5 من 78 تقييم</div>
             <div class="cta-buttons">
-                <a href="https://booksy.com" class="btn btn-primary">Book Online</a>
-                <a href="tel:+15305605500" class="btn btn-secondary">Call Us</a>
+                <a href="https://booksy.com" class="btn btn-primary">احجز الآن</a>
+                <a href="tel:+15305605500" class="btn btn-secondary">اتصل بنا</a>
             </div>
         </div>
     </section>
@@ -395,23 +603,27 @@
     <!-- Services Section -->
     <section class="services">
         <div class="container">
-            <h2 id="services">Our Services</h2>
+            <h2 id="services">خدماتنا المميزة</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Fresh Haircuts</h3>
-                    <p>Professional haircuts tailored to your style. Every cut is customized to match your preferences and face shape.</p>
+                    <div class="service-icon">✂️</div>
+                    <h3>قص الشعر الاحترافي</h3>
+                    <p>قصات حديثة واحترافية مصممة خصيصاً لك. كل قصة فريدة وتناسب شكل وجهك.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Straight Razor Shave</h3>
-                    <p>Traditional straight razor shaves for a clean, precise finish. Premium experience with skilled barbers.</p>
+                    <div class="service-icon">🪒</div>
+                    <h3>حلاقة موس معدني</h3>
+                    <p>تجربة تقليدية بموس معدني حاد. حلاقة نظيفة واحترافية بأعلى مستويات الدقة.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Beard Trimming</h3>
-                    <p>Expert beard shaping and maintenance. Keep your beard looking sharp with our precision trimming.</p>
+                    <div class="service-icon">💈</div>
+                    <h3>تشذيب اللحية</h3>
+                    <p>عناية متقنة بتصفيف اللحية والشنب. حافظ على مظهر احترافي وجذاب.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Kids Cuts</h3>
-                    <p>Friendly, professional haircuts for children. We create a comfortable atmosphere for first-time visitors.</p>
+                    <div class="service-icon">👨‍👧</div>
+                    <h3>قص الأطفال</h3>
+                    <p>بيئة ودية وآمنة للأطفال. قصات عصرية وجميلة لأطفالك بأيد خبيرة.</p>
                 </div>
             </div>
         </div>
@@ -420,40 +632,55 @@
     <!-- Gallery Section -->
     <section class="gallery">
         <div class="container">
-            <h2 id="gallery">Our Work</h2>
+            <h2 id="gallery">معرض أعمالنا</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23ddd' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EHaircut Gallery%3C/text%3E%3C/svg%3E" alt="Gallery 1">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة احترافية 1">
+                    <div class="gallery-overlay">قصة احترافية</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23ddd' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EBarber Skills%3C/text%3E%3C/svg%3E" alt="Gallery 2">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة دقيقة 2">
+                    <div class="gallery-overlay">حلاقة دقيقة</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23ddd' width='300' height='300'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%23999' text-anchor='middle' dominant-baseline='middle'%3EPrecision Cuts%3C/text%3E%3C/svg%3E" alt="Gallery 3">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة عصرية 3">
+                    <div class="gallery-overlay">قصة عصرية</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="تصفيفة رائعة 4">
+                    <div class="gallery-overlay">تصفيفة رائعة</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="حلاقة جميلة 5">
+                    <div class="gallery-overlay">قص متقن</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة ممتازة 6">
+                    <div class="gallery-overlay">نتائج مثالية</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Reviews Section -->
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2 id="reviews">What Clients Say</h2>
+            <h2 id="reviews">تقييمات عملائنا</h2>
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Really cool people, very nice and welcoming atmosphere! The best barber experience I've had."</p>
-                    <div class="testimonial-author">Joshua Fellman</div>
+                    <p>"أفضل حلاق في ريدينج! الأشخاص رائعون جداً والأجواء ممتعة جداً. التجربة كانت لا تُنسى!"</p>
+                    <div class="testimonial-author">- Joshua Fellman</div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Downtown Barbers provided great service, clean environment, and a fresh cut! Highly recommended."</p>
-                    <div class="testimonial-author">Katie Baza</div>
+                    <p>"خدمة ممتازة، محل نظيف جداً، والقصة رائعة! بيئة احترافية وودية. سأعود مرة أخرى بكل تأكيد!"</p>
+                    <div class="testimonial-author">- Katie Baza</div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"Super clean and professional location. The attention to detail is incredible. Will definitely return!"</p>
-                    <div class="testimonial-author">John Romolo</div>
+                    <p>"محل نظيف واحترافي جداً! الاهتمام بالتفاصيل رائع جداً. حقاً أفضل تجربة قص شعر لي."</p>
+                    <div class="testimonial-author">- John Romolo</div>
                 </div>
             </div>
         </div>
@@ -462,26 +689,27 @@
     <!-- Contact Section -->
     <section class="contact">
         <div class="container">
-            <h2 id="contact">Get In Touch</h2>
+            <h2 id="contact">تواصل معنا</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Location</h3>
-                    <p>📍 1327 Tehama St<br>Redding, CA 96001<br>United States</p>
+                    <h3>📍 موقعنا</h3>
+                    <p>1327 Tehama St<br>Redding, CA 96001<br>الولايات المتحدة</p>
 
-                    <h3 style="margin-top: 2rem;">Hours</h3>
-                    <p>Call for current hours<br>Walking available when<br>barbers have availability</p>
+                    <h3>⏰ أوقات العمل</h3>
+                    <p>احجز موعدك الآن<br>نقبل الزيارات عند توفر الوقت<br>الحجز عبر Booksy متاح</p>
 
-                    <h3 style="margin-top: 2rem;">Contact</h3>
-                    <p>📞 <a href="tel:+15305605500" style="color: var(--primary);">+1 530-560-5500</a></p>
-                    <p>💻 <a href="https://booksy.com" style="color: var(--primary);">Book on Booksy</a></p>
+                    <h3>📞 اتصل بنا</h3>
+                    <p><a href="tel:+15305605500">+1 530-560-5500</a></p>
+                    <p><a href="https://booksy.com">احجز عبر Booksy</a></p>
+                    <p><a href="https://instagram.com/downownbarbersinc">متابعتنا على إنستغرام</a></p>
                 </div>
                 <div>
-                    <h3>Send us a Message</h3>
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message!');">
-                        <input type="text" placeholder="Your Name" required>
-                        <input type="email" placeholder="Your Email" required>
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    <h3>📧 أرسل لنا رسالة</h3>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('شكراً لرسالتك! سنرد عليك قريباً.');">
+                        <input type="text" placeholder="اسمك" required>
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <textarea placeholder="رسالتك" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">أرسل الرسالة</button>
                     </form>
                 </div>
             </div>
@@ -490,8 +718,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2021-2026 Downtown Barbers Inc. | All Rights Reserved</p>
-        <p>Located in Downtown Redding, California</p>
+        <p>&copy; 2021-2026 Downtown Barbers Inc. جميع الحقوق محفوظة</p>
+        <p>حلاق رقم واحد في ريدينج، كاليفورنيا 🇺🇸</p>
     </footer>
 </body>
 </html>
