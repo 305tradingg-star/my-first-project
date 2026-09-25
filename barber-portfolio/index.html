@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downtown Barbers Inc. - الحلاق الأول في ريدينج</title>
+    <title>Downtown Barbers Inc. - Premium Barbershop in Redding, CA</title>
     <style>
         * {
             margin: 0;
@@ -57,18 +57,18 @@
             gap: 1rem;
         }
 
-        .logo-circle {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--gold) 0%, #c49f28 100%);
+        .logo-image {
+            width: 70px;
+            height: 70px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--dark);
+            overflow: hidden;
             box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+        }
+
+        .logo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .logo-text {
@@ -334,7 +334,7 @@
 
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             margin-top: 4rem;
         }
@@ -345,7 +345,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
             transition: all 0.4s;
             position: relative;
-            aspect-ratio: 1;
+            aspect-ratio: 4/5;
         }
 
         .gallery-item:hover {
@@ -572,17 +572,19 @@
     <header>
         <nav>
             <div class="logo-section">
-                <div class="logo-circle">B</div>
+                <div class="logo-image">
+                    <img src="9.jpg" alt="Downtown Barbers Logo">
+                </div>
                 <div class="logo-text">
                     <h1>DOWNTOWN BARBERS</h1>
                     <p>Premium Haircuts Since 2021</p>
                 </div>
             </div>
             <ul>
-                <li><a href="#services">الخدمات</a></li>
-                <li><a href="#gallery">الأعمال</a></li>
-                <li><a href="#reviews">التقييمات</a></li>
-                <li><a href="#contact">التواصل</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -591,11 +593,11 @@
     <section class="hero">
         <div class="hero-content">
             <h1>Downtown Barbers Inc.</h1>
-            <p class="tagline">حلاق رقم واحد في ريدينج كاليفورنيا</p>
-            <div class="rating-badge">⭐ 4.9/5 من 78 تقييم</div>
+            <p class="tagline">Premium Barbershop in Downtown Redding, California</p>
+            <div class="rating-badge">⭐ 4.9/5 from 78 Reviews</div>
             <div class="cta-buttons">
-                <a href="https://booksy.com" class="btn btn-primary">احجز الآن</a>
-                <a href="tel:+15305605500" class="btn btn-secondary">اتصل بنا</a>
+                <a href="https://booksy.com" class="btn btn-primary">Book Now</a>
+                <a href="tel:+15305605500" class="btn btn-secondary">Call Us</a>
             </div>
         </div>
     </section>
@@ -603,27 +605,27 @@
     <!-- Services Section -->
     <section class="services">
         <div class="container">
-            <h2 id="services">خدماتنا المميزة</h2>
+            <h2 id="services">Our Premium Services</h2>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">✂️</div>
-                    <h3>قص الشعر الاحترافي</h3>
-                    <p>قصات حديثة واحترافية مصممة خصيصاً لك. كل قصة فريدة وتناسب شكل وجهك.</p>
+                    <h3>Professional Haircuts</h3>
+                    <p>Modern and classic haircuts tailored to your style. Every cut is customized to match your face shape and preferences.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">🪒</div>
-                    <h3>حلاقة موس معدني</h3>
-                    <p>تجربة تقليدية بموس معدني حاد. حلاقة نظيفة واحترافية بأعلى مستويات الدقة.</p>
+                    <h3>Straight Razor Shave</h3>
+                    <p>Traditional straight razor shaves for ultimate precision. Premium experience with master barbers dedicated to your look.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">💈</div>
-                    <h3>تشذيب اللحية</h3>
-                    <p>عناية متقنة بتصفيف اللحية والشنب. حافظ على مظهر احترافي وجذاب.</p>
+                    <h3>Beard Trimming</h3>
+                    <p>Expert beard shaping and detailed maintenance. Keep your beard looking sharp and impeccable with our precision service.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">👨‍👧</div>
-                    <h3>قص الأطفال</h3>
-                    <p>بيئة ودية وآمنة للأطفال. قصات عصرية وجميلة لأطفالك بأيد خبيرة.</p>
+                    <h3>Kids Haircuts</h3>
+                    <p>Friendly and professional haircuts for children. We create a comfortable atmosphere for first-time visitors and families.</p>
                 </div>
             </div>
         </div>
@@ -632,31 +634,55 @@
     <!-- Gallery Section -->
     <section class="gallery">
         <div class="container">
-            <h2 id="gallery">معرض أعمالنا</h2>
+            <h2 id="gallery">Our Work Showcase</h2>
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة احترافية 1">
-                    <div class="gallery-overlay">قصة احترافية</div>
+                    <img src="1.jpg" alt="Premium Haircut">
+                    <div class="gallery-overlay">Fresh Cut</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة دقيقة 2">
-                    <div class="gallery-overlay">حلاقة دقيقة</div>
+                    <img src="2.jpg" alt="Professional Styling">
+                    <div class="gallery-overlay">Expert Styling</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة عصرية 3">
-                    <div class="gallery-overlay">قصة عصرية</div>
+                    <img src="3.jpg" alt="Precision Haircut">
+                    <div class="gallery-overlay">Precision Cut</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="تصفيفة رائعة 4">
-                    <div class="gallery-overlay">تصفيفة رائعة</div>
+                    <img src="4.jpg" alt="Modern Fade">
+                    <div class="gallery-overlay">Clean Fade</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="حلاقة جميلة 5">
-                    <div class="gallery-overlay">قص متقن</div>
+                    <img src="5.jpg" alt="Sharp Design">
+                    <div class="gallery-overlay">Sharp Design</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3+iiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD/9k=" alt="قصة ممتازة 6">
-                    <div class="gallery-overlay">نتائج مثالية</div>
+                    <img src="6.jpg" alt="Classic Style">
+                    <div class="gallery-overlay">Classic Look</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="7.jpg" alt="Detailed Cut">
+                    <div class="gallery-overlay">Detailed Work</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="8.jpg" alt="Perfect Finish">
+                    <div class="gallery-overlay">Perfect Finish</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="10.jpg" alt="Fresh Look">
+                    <div class="gallery-overlay">Fresh Look</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="11.jpg" alt="Premium Cut">
+                    <div class="gallery-overlay">Premium Cut</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="12.jpg" alt="Master Work">
+                    <div class="gallery-overlay">Master Work</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="13.jpg" alt="Kids Cut">
+                    <div class="gallery-overlay">Kids Haircut</div>
                 </div>
             </div>
         </div>
@@ -665,22 +691,22 @@
     <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
-            <h2 id="reviews">تقييمات عملائنا</h2>
+            <h2 id="reviews">What Our Clients Say</h2>
             <div class="testimonials-grid">
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"أفضل حلاق في ريدينج! الأشخاص رائعون جداً والأجواء ممتعة جداً. التجربة كانت لا تُنسى!"</p>
-                    <div class="testimonial-author">- Joshua Fellman</div>
+                    <p>"Honestly, the best barber I've ever been to!!! I've been to barbers all over the world, and this is by far my favorite place!"</p>
+                    <div class="testimonial-author">— Joshua Fellman</div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"خدمة ممتازة، محل نظيف جداً، والقصة رائعة! بيئة احترافية وودية. سأعود مرة أخرى بكل تأكيد!"</p>
-                    <div class="testimonial-author">- Katie Baza</div>
+                    <p>"Downtown Barbers provided great service, clean environment, and a fresh cut! Super professional and welcoming. Highly recommended!"</p>
+                    <div class="testimonial-author">— Katie Baza</div>
                 </div>
                 <div class="testimonial">
                     <div class="stars">★★★★★</div>
-                    <p>"محل نظيف واحترافي جداً! الاهتمام بالتفاصيل رائع جداً. حقاً أفضل تجربة قص شعر لي."</p>
-                    <div class="testimonial-author">- John Romolo</div>
+                    <p>"Super clean and professional location. The attention to detail is incredible. Had a great first experience with a perfect cut!"</p>
+                    <div class="testimonial-author">— John Romolo</div>
                 </div>
             </div>
         </div>
@@ -689,27 +715,27 @@
     <!-- Contact Section -->
     <section class="contact">
         <div class="container">
-            <h2 id="contact">تواصل معنا</h2>
+            <h2 id="contact">Get In Touch</h2>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>📍 موقعنا</h3>
-                    <p>1327 Tehama St<br>Redding, CA 96001<br>الولايات المتحدة</p>
+                    <h3>📍 Location</h3>
+                    <p>1327 Tehama St<br>Redding, CA 96001<br>United States</p>
 
-                    <h3>⏰ أوقات العمل</h3>
-                    <p>احجز موعدك الآن<br>نقبل الزيارات عند توفر الوقت<br>الحجز عبر Booksy متاح</p>
+                    <h3>⏰ Hours</h3>
+                    <p>Call for current hours<br>Walk-ins available when<br>barbers have availability</p>
 
-                    <h3>📞 اتصل بنا</h3>
+                    <h3>📞 Contact Info</h3>
                     <p><a href="tel:+15305605500">+1 530-560-5500</a></p>
-                    <p><a href="https://booksy.com">احجز عبر Booksy</a></p>
-                    <p><a href="https://instagram.com/downownbarbersinc">متابعتنا على إنستغرام</a></p>
+                    <p><a href="https://booksy.com">Book on Booksy</a></p>
+                    <p><a href="https://instagram.com/downownbarbersinc">Follow on Instagram</a></p>
                 </div>
                 <div>
-                    <h3>📧 أرسل لنا رسالة</h3>
-                    <form class="contact-form" onsubmit="event.preventDefault(); alert('شكراً لرسالتك! سنرد عليك قريباً.');">
-                        <input type="text" placeholder="اسمك" required>
-                        <input type="email" placeholder="بريدك الإلكتروني" required>
-                        <textarea placeholder="رسالتك" required></textarea>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">أرسل الرسالة</button>
+                    <h3>Send us a Message</h3>
+                    <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your message! We will get back to you soon.');">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -718,8 +744,8 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2021-2026 Downtown Barbers Inc. جميع الحقوق محفوظة</p>
-        <p>حلاق رقم واحد في ريدينج، كاليفورنيا 🇺🇸</p>
+        <p>&copy; 2021-2026 Downtown Barbers Inc. All Rights Reserved</p>
+        <p>Premium Barbershop in Downtown Redding, California 🇺🇸</p>
     </footer>
 </body>
 </html>
