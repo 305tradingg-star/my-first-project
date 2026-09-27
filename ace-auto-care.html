@@ -726,16 +726,42 @@
       transition: none !important;
     }
   }
+
+  /* Leaflet styles */
+  #map {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    position: relative;
+  }
+  .leaflet-container {
+    background: #2d2d2d;
+    font-family: var(--font-body);
+  }
+  .leaflet-popup-content-wrapper {
+    background: var(--color-surface);
+    color: var(--color-text);
+    border-radius: 6px;
+  }
+  .leaflet-popup-tip {
+    background: var(--color-surface);
+  }
+  .leaflet-control-zoom {
+    border-radius: 6px;
+  }
+  .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+    background: var(--color-dark);
+    color: white;
+    border: none;
+  }
+  .leaflet-control-zoom-in:hover, .leaflet-control-zoom-out:hover {
+    background: var(--color-charcoal);
+  }
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
-<style>
-  #map { width: 100%; height: 300px; border-radius: 8px; }
-  .leaflet-container { background: #2d2d2d; }
-</style>
 
 <!-- Header -->
 <header>
@@ -1006,8 +1032,15 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
+  // Load Leaflet CSS
+  const leafletCSS = document.createElement('link');
+  leafletCSS.rel = 'stylesheet';
+  leafletCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
+  document.head.appendChild(leafletCSS);
+
   // Initialize map
-  const map = L.map('map').setView([27.5307273, -99.4960168], 16);
+  setTimeout(() => {
+    const map = L.map('map').setView([27.5307273, -99.4960168], 16);
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors',
@@ -1024,9 +1057,10 @@
     fillOpacity: 0.8
   }).addTo(map);
 
-  marker.bindPopup('<strong>Ace Complete Auto Care</strong><br>102 W Saunders St<br>Laredo, TX 78041<br><a href="https://www.google.com/maps/place/Ace+Complete+Auto+Care/@27.5307273,-99.4960168,17z" target="_blank">View on Google Maps</a>', {
-    className: 'custom-popup'
-  }).openPopup();
+    marker.bindPopup('<strong>Ace Complete Auto Care</strong><br>102 W Saunders St<br>Laredo, TX 78041<br><a href="https://www.google.com/maps/place/Ace+Complete+Auto+Care/@27.5307273,-99.4960168,17z" target="_blank">View on Google Maps</a>', {
+      className: 'custom-popup'
+    }).openPopup();
+  }, 100);
 
   function handleBooking(e) {
     e.preventDefault();
