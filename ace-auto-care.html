@@ -1051,11 +1051,34 @@
       notes: formData.get('notes')
     };
 
-    // In a real implementation, this would send the data to a backend
-    console.log('Booking request:', data);
+    // Create WhatsApp message
+    const serviceNames = {
+      'engine': 'Engine Diagnostics',
+      'brake': 'Brake Services',
+      'electrical': 'Electrical Systems',
+      'transmission': 'Transmission Service',
+      'ac': 'Air Conditioning',
+      'oil': 'Oil & Filter Changes',
+      'other': 'Other'
+    };
+
+    const serviceName = serviceNames[data.service] || data.service;
+    const whatsappMessage = `*New Appointment Request - Ace Complete Auto Care*
+
+👤 *Name:* ${data.name}
+📱 *Phone:* ${data.phone}
+📧 *Email:* ${data.email}
+🚗 *Vehicle:* ${data.vehicle}
+🔧 *Service:* ${serviceName}
+📅 *Date:* ${data.date}
+📝 *Notes:* ${data.notes || 'None'}`;
+
+    // Open WhatsApp with the message
+    const whatsappURL = `https://wa.me/19567237433?text=${encodeURIComponent(whatsappMessage)}`;
+    window.open(whatsappURL, '_blank');
 
     // Show confirmation
-    const message = `Thank you, ${data.name}! Your appointment request for ${data.date} has been received. We'll confirm shortly at ${data.phone}.`;
+    const message = `Thank you, ${data.name}! Your appointment request has been sent via WhatsApp. We'll confirm shortly!`;
     alert(message);
 
     // Reset form
