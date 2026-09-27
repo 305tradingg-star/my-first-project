@@ -1481,8 +1481,23 @@
         function handleFormSubmit(event) {
             event.preventDefault();
             const form = event.target;
-            const name = form.querySelector('input[type="text"]').value;
-            alert(`Thank you, ${name}! Your appointment request has been received. We'll contact you to confirm.`);
+            const inputs = form.querySelectorAll('input, select, textarea');
+            const name = inputs[0].value;
+            const phone = inputs[1].value;
+            const email = inputs[2].value;
+            const vehicle = inputs[3].value;
+            const service = inputs[4].value;
+            const date = inputs[5].value;
+            const time = inputs[6].value;
+            
+            // Create SMS message
+            const message = `Appointment Request: ${name}, Vehicle: ${vehicle}, Service: ${service}, Date: ${date}, Time: ${time}, Phone: ${phone}, Email: ${email}`;
+            
+            // Send SMS via sms protocol
+            window.location.href = `sms:+19734820600?body=${encodeURIComponent(message)}`;
+            
+            // Show confirmation
+            alert(`Thank you, ${name}! Your appointment request has been sent via SMS.`);
             form.reset();
         }
 
