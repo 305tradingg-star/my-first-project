@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Auto Shop Repair | Professional Auto Repair in Newark, NJ</title>
+    <meta name="description" content="Professional auto repair and maintenance in Newark, NJ. Oil changes, bumper repair, vehicle diagnostics, and mechanical repairs. Trusted by Newark drivers. 4.6★ 32 reviews.">
+    <meta name="keywords" content="auto repair Newark NJ, mechanic Newark New Jersey, oil change Newark, bumper repair, car repair near me, vehicle diagnostics">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Global Auto Shop Repair",
+        "description": "Professional auto repair and maintenance shop in Newark, NJ",
+        "image": "https://via.placeholder.com/1200x630?text=Global+Auto+Shop",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "65–75 Springdale Ave",
+            "addressLocality": "Newark",
+            "addressRegion": "NJ",
+            "postalCode": "07107",
+            "addressCountry": "US"
+        },
+        "telephone": "+1-973-482-0600",
+        "url": "https://globalautoshoprepair.com",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.6",
+            "reviewCount": "32"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Sunday",
+                "opens": "10:00",
+                "closes": "00:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                "opens": "08:00",
+                "closes": "00:00"
+            }
+        ],
+        "priceRange": "$$",
+        "sameAs": [
+            "https://www.google.com/maps/place/Global+Auto+Shop+Repair"
+        ]
+    }
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-black: #0a0e27;
+            --color-charcoal: #1a1e35;
+            --color-dark-gray: #2d2f42;
+            --color-silver: #c0c0c0;
+            --color-light-silver: #e8e8e8;
+            --color-red: #cc2936;
+            --color-deep-red: #8b1a23;
+            --color-gold: #d4af37;
+            --color-dark-gold: #a68c2c;
+            --color-text: #e0e0e0;
+            --color-text-dark: #0a0e27;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%);
+            color: var(--color-text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ===== HEADER ===== */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--color-gold);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.1);
+            padding: 1rem 0;
+            transition: var(--transition);
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 30px rgba(212, 175, 55, 0.15);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-dark-gold) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--color-black);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .business-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--color-light-silver);
+            letter-spacing: 1px;
+        }
+
+        .business-name span {
+            color: var(--color-gold);
+        }
+
+        .nav-container {
+            display: flex;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--color-light-silver);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-red) 0%, var(--color-deep-red) 100%);
+            color: white;
+            border: 2px solid var(--color-red);
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(204, 41, 54, 0.5);
+            background: linear-gradient(135deg, var(--color-deep-red) 0%, var(--color-red) 100%);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--color-gold);
+            border: 2px solid var(--color-gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 14, 39, 0.5), rgba(10, 14, 39, 0.7)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231a1e35;stop-opacity:1" /><stop offset="100%" style="stop-color:%230a0e27;stop-opacity:1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/><circle cx="200" cy="150" r="80" fill="%23cc2936" opacity="0.1"/><circle cx="1000" cy="600" r="120" fill="%23d4af37" opacity="0.08"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(204, 41, 54, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            z-index: 2;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            letter-spacing: -2px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 span {
+            color: var(--color-gold);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: var(--color-light-silver);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            min-width: 200px;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--color-gold);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-top: 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--color-gold);
+        }
+
+        .stars {
+            color: var(--color-gold);
+            letter-spacing: 2px;
+        }
+
+        /* ===== SERVICES SECTION ===== */
+        .services {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-dark-gray) 100%);
+            position: relative;
+        }
+
+        .services::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-header h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+
+        .section-header h2 span {
+            color: var(--color-gold);
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--color-text);
+        }
+
+        .services-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, rgba(45, 47, 66, 0.8) 0%, rgba(26, 30, 53, 0.8) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            transition: var(--transition);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--color-gold);
+            background: linear-gradient(135deg, rgba(45, 47, 66, 1) 0%, rgba(26, 30, 53, 1) 100%);
+            box-shadow: 0 15px 40px rgba(212, 175, 55, 0.2);
+        }
+
+        .service-card:hover::before {
+            top: -25%;
+            right: -25%;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-dark-gold) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-light-silver);
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--color-text);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .learn-more {
+            color: var(--color-gold);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .learn-more:hover {
+            gap: 1rem;
+            color: var(--color-light-silver);
+        }
+
+        /* ===== WHY CHOOSE US SECTION ===== */
+        .why-choose {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%);
+            position: relative;
+        }
+
+        .why-choose::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-red), transparent);
+        }
+
+        .why-choose-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .why-choose .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(45, 47, 66, 0.5);
+            border-left: 4px solid var(--color-red);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .feature:hover {
+            background: rgba(45, 47, 66, 0.8);
+            border-left-color: var(--color-gold);
+            transform: translateX(10px);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            min-width: 60px;
+            background: linear-gradient(135deg, var(--color-red) 0%, var(--color-deep-red) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+        }
+
+        .feature-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-light-silver);
+        }
+
+        .feature-content p {
+            font-size: 0.9rem;
+            color: var(--color-text);
+            line-height: 1.6;
+        }
+
+        /* ===== REVIEWS SECTION ===== */
+        .reviews {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-dark-gray) 100%);
+            position: relative;
+        }
+
+        .reviews::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+        }
+
+        .reviews-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .reviews .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .rating-summary {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            background: rgba(45, 47, 66, 0.5);
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .rating-summary p {
+            font-size: 1.2rem;
+            color: var(--color-text);
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: linear-gradient(135deg, rgba(45, 47, 66, 0.8) 0%, rgba(26, 30, 53, 0.8) 100%);
+            border: 1px solid rgba(204, 41, 54, 0.3);
+            border-radius: 8px;
+            padding: 2rem;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .review-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 4rem;
+            color: var(--color-gold);
+            opacity: 0.2;
+        }
+
+        .review-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--color-red);
+            box-shadow: 0 12px 35px rgba(204, 41, 54, 0.2);
+        }
+
+        .review-text {
+            font-size: 1rem;
+            color: var(--color-light-silver);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .review-rating {
+            color: var(--color-gold);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .review-source {
+            font-size: 0.85rem;
+            color: var(--color-text);
+        }
+
+        /* ===== APPOINTMENT SECTION ===== */
+        .appointment {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--color-black) 0%, var(--color-charcoal) 100%);
+            position: relative;
+        }
+
+        .appointment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-red), transparent);
+        }
+
+        .appointment-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .appointment .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--color-light-silver);
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(45, 47, 66, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 4px;
+            color: var(--color-light-silver);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            background: rgba(45, 47, 66, 1);
+            border-color: var(--color-gold);
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .appointment .btn-primary {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+
+        /* ===== CONTACT SECTION ===== */
+        .contact {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-dark-gray) 100%);
+            position: relative;
+        }
+
+        .contact::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+        }
+
+        .contact-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .contact .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(45, 47, 66, 0.5);
+            border-left: 4px solid var(--color-gold);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: rgba(45, 47, 66, 0.8);
+            transform: translateX(10px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-dark-gold) 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--color-black);
+        }
+
+        .contact-details h3 {
+            color: var(--color-light-silver);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-details p {
+            color: var(--color-text);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .contact-details a:hover {
+            color: var(--color-light-silver);
+        }
+
+        .map-container {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid var(--color-gold);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.2);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .directions-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* ===== MOBILE STICKY BUTTON ===== */
+        .mobile-call-btn {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-red) 0%, var(--color-deep-red) 100%);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(204, 41, 54, 0.4);
+            transition: var(--transition);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-call-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--color-black);
+            border-top: 2px solid var(--color-gold);
+            padding: 4rem 2rem 2rem;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            color: var(--color-light-silver);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+
+        .footer-section p {
+            color: var(--color-text);
+            font-size: 0.9rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--color-text);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 2px solid var(--color-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .social-icon:hover {
+            background: var(--color-gold);
+            color: var(--color-black);
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+
+        .payment-icon {
+            width: 45px;
+            height: 30px;
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--color-gold);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--color-gold);
+            font-weight: 600;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--color-text);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* ===== RESPONSIVE DESIGN ===== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .header-buttons {
+                gap: 0.5rem;
+            }
+
+            .header-buttons .btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.85rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-buttons .btn {
+                min-width: 100%;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+
+            .mobile-call-btn {
+                display: flex;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                padding: 0 1rem;
+            }
+
+            .business-name {
+                font-size: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .services-grid {
+                gap: 1rem;
+            }
+
+            .service-card {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                gap: 1rem;
+            }
+
+            .feature {
+                padding: 1rem;
+            }
+
+            .contact {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo-section">
+                <div class="logo">🚗</div>
+                <div>
+                    <div class="business-name">Global <span>Auto</span></div>
+                </div>
+            </div>
+            <div class="nav-container">
+                <nav class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#services">Services</a>
+                    <a href="#about">About Us</a>
+                    <a href="#reviews">Reviews</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                <div class="header-buttons">
+                    <a href="#appointment" class="btn btn-primary">Book Appointment</a>
+                    <a href="tel:+19734820600" class="btn btn-secondary">Call Now</a>
+                </div>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Reliable Auto Repair. <span>Exceptional Service.</span></h1>
+            <p>Professional automotive repair and maintenance in Newark, New Jersey. Honest pricing, experienced mechanics, and dependable service you can trust.</p>
+            <div class="hero-buttons">
+                <a href="#appointment" class="btn btn-primary">Book an Appointment</a>
+                <a href="tel:+19734820600" class="btn btn-secondary">Call +1 973-482-0600</a>
+            </div>
+            <div class="rating-badge">
+                <span class="stars">★★★★★</span>
+                <span>4.6/5 Based on 32 Reviews</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-grid" style="max-width: 1400px; margin: 0 auto;">
+            <div style="grid-column: 1 / -1;">
+                <div class="section-header">
+                    <h2>Our <span>Services</span></h2>
+                    <p>Professional automotive solutions tailored to your vehicle's needs</p>
+                </div>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛢️</div>
+                <h3>Oil Change</h3>
+                <p>Premium oil changes to keep your engine running smoothly and efficiently.</p>
+                <a href="#services" class="learn-more">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Bumper Repair</h3>
+                <p>Expert bumper repair and restoration to restore your vehicle's appearance.</p>
+                <a href="#services" class="learn-more">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔧</div>
+                <h3>General Auto Repair</h3>
+                <p>Comprehensive auto repair services for all makes and models.</p>
+                <a href="#services" class="learn-more">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🔍</div>
+                <h3>Vehicle Diagnostics</h3>
+                <p>Advanced diagnostic services to identify and resolve vehicle issues quickly.</p>
+                <a href="#services" class="learn-more">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚙️</div>
+                <h3>Mechanical Repairs</h3>
+                <p>Professional mechanical repairs by certified and experienced technicians.</p>
+                <a href="#services" class="learn-more">Learn More →</a>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>On-Site Services</h3>
+                <p>Convenient on-site auto repair services when you need us most.</p>
+                <a href="#services" class="learn-more">Learn More →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="why-choose" id="about">
+        <div class="why-choose-container">
+            <div class="section-header">
+                <h2>Trusted by <span>Drivers Across Newark</span></h2>
+                <p>Discover why Global Auto Shop Repair is the preferred choice for auto repair services</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">👨‍🔧</div>
+                    <div class="feature-content">
+                        <h3>Trusted Mechanics</h3>
+                        <p>Our certified and experienced mechanics bring expertise and honesty to every repair.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-content">
+                        <h3>Fast & Reliable Service</h3>
+                        <p>Quick turnaround times without compromising on the quality of our work.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💰</div>
+                    <div class="feature-content">
+                        <h3>Reasonable Pricing</h3>
+                        <p>Transparent, competitive pricing that delivers exceptional value for your investment.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">💬</div>
+                    <div class="feature-content">
+                        <h3>Clear Communication</h3>
+                        <p>We keep you informed every step of the way with honest and transparent updates.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">✓</div>
+                    <div class="feature-content">
+                        <h3>Quality Repairs</h3>
+                        <p>Premium parts and expert craftsmanship ensure your vehicle runs perfectly.</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🚙</div>
+                    <div class="feature-content">
+                        <h3>Convenient On-Site Services</h3>
+                        <p>We come to you when you need repairs at your home or office.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+        <div class="reviews-container">
+            <div class="section-header">
+                <h2>What Our <span>Customers Say</span></h2>
+                <p>Real reviews from satisfied customers in Newark</p>
+            </div>
+            <div class="rating-summary">
+                <p><strong>4.6 out of 5 stars</strong> from <strong>32 verified reviews</strong></p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"This is the only place I trust with my car — I bring all my work here."</p>
+                    <p class="review-source">Customer Review</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"Recently got my oil change and bumper fixed and the pricing was very reasonable."</p>
+                    <p class="review-source">Customer Review</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"Great service, great mechanics."</p>
+                    <p class="review-source">Customer Review</p>
+                </div>
+                <div class="review-card">
+                    <div class="review-rating">★★★★★</div>
+                    <p class="review-text">"Best auto shop in Newark! Got my car working in a timely fashion and quoted a great price!"</p>
+                    <p class="review-source">Customer Review</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointment Section -->
+    <section class="appointment" id="appointment">
+        <div class="appointment-container">
+            <div class="section-header">
+                <h2>Book Your <span>Appointment</span></h2>
+                <p>Schedule your vehicle service with our certified mechanics</p>
+            </div>
+            <form onsubmit="handleFormSubmit(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="fullname">Full Name</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="make">Vehicle Make & Model</label>
+                        <input type="text" id="make" name="make" placeholder="e.g., Honda Civic" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="Oil Change">Oil Change</option>
+                            <option value="Bumper Repair">Bumper Repair</option>
+                            <option value="General Auto Repair">General Auto Repair</option>
+                            <option value="Vehicle Diagnostics">Vehicle Diagnostics</option>
+                            <option value="Mechanical Repairs">Mechanical Repairs</option>
+                            <option value="On-Site Services">On-Site Services</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Preferred Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <label for="message">Additional Message (Optional)</label>
+                    <textarea id="message" name="message" placeholder="Tell us any additional details about your vehicle or service needs..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Request an Appointment</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <h2>Get in <span>Touch</span></h2>
+                <p>Visit us or reach out for more information</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h3>Address</h3>
+                            <p>65–75 Springdale Ave<br>Newark, NJ 07107<br>United States</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Phone</h3>
+                            <p><a href="tel:+19734820600">+1 973-482-0600</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-details">
+                            <h3>Hours</h3>
+                            <p>Monday – Saturday: 8:00 AM – 12:00 AM<br>Sunday: 10:00 AM – 12:00 AM</p>
+                        </div>
+                    </div>
+                    <a href="https://www.google.com/maps/place/65-75+Springdale+Ave,+Newark,+NJ+07107" target="_blank" class="btn btn-secondary directions-btn">
+                        📍 Get Directions
+                    </a>
+                </div>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3027.1234567890!2d-74.2500!3d40.7200!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c254b5e5c5c5c5%3A0x1234567890!2s65-75%20Springdale%20Ave%2C%20Newark%2C%20NJ%2007107!5e0!3m2!1sen!2sus!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;">
+                        <div class="logo">🚗</div>
+                        <strong style="color: var(--color-light-silver);">Global Auto Shop</strong>
+                    </div>
+                    <p>Professional auto repair and maintenance services in Newark, New Jersey. Trusted by local drivers since we opened.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" title="Facebook">f</a>
+                        <a href="#" class="social-icon" title="Google">G</a>
+                        <a href="#" class="social-icon" title="Yelp">Y</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#reviews">Reviews</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">Oil Changes</a></li>
+                        <li><a href="#services">Bumper Repair</a></li>
+                        <li><a href="#services">Auto Diagnostics</a></li>
+                        <li><a href="#services">Mechanical Repairs</a></li>
+                        <li><a href="#services">On-Site Services</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><strong>Address:</strong><br>65–75 Springdale Ave<br>Newark, NJ 07107</p>
+                    <p style="margin-top: 1rem;"><strong>Phone:</strong><br><a href="tel:+19734820600" style="color: var(--color-gold);">+1 973-482-0600</a></p>
+                    <p style="margin-top: 1rem;"><strong>Hours:</strong><br>Monday–Saturday: 8 AM–12 AM<br>Sunday: 10 AM–12 AM</p>
+                </div>
+            </div>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>Payment Methods</h4>
+                    <div class="payment-methods">
+                        <div class="payment-icon">💳 VISA</div>
+                        <div class="payment-icon">💳 MC</div>
+                        <div class="payment-icon">💳 AMEX</div>
+                        <div class="payment-icon">💳 DEBIT</div>
+                        <div class="payment-icon">📱 NFC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Global Auto Shop Repair. All rights reserved.</p>
+            <p>65–75 Springdale Ave, Newark, NJ 07107 | +1 973-482-0600</p>
+        </div>
+    </footer>
+
+    <!-- Mobile Call Button -->
+    <button class="mobile-call-btn" onclick="window.location.href='tel:+19734820600'" title="Call Global Auto Shop">☎️</button>
+
+    <script>
+        // Sticky header effect
+        const header = document.querySelector('.header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const formData = {
+                fullname: document.getElementById('fullname').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                make: document.getElementById('make').value,
+                service: document.getElementById('service').value,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                message: document.getElementById('message').value
+            };
+
+            alert(`Thank you, ${formData.fullname}! We've received your appointment request.\n\nWe'll contact you at ${formData.phone} to confirm your appointment.\n\nService: ${formData.service}\nDate: ${formData.date}\nTime: ${formData.time}`);
+            event.target.reset();
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+            navLinks.style.flexDirection = 'column';
+            navLinks.style.position = 'absolute';
+            navLinks.style.top = '70px';
+            navLinks.style.left = '0';
+            navLinks.style.right = '0';
+            navLinks.style.background = 'var(--color-black)';
+            navLinks.style.padding = '2rem';
+            navLinks.style.gap = '1rem';
+            navLinks.style.borderBottom = '2px solid var(--color-gold)';
+        });
+    </script>
+</body>
+</html>
