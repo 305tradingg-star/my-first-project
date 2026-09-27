@@ -47,14 +47,15 @@
         }
 
         :root {
-            --primary-dark: #1a1410;
-            --primary-light: #2d2420;
-            --accent-brand: #E91E63;
-            --accent-gold: #D4AF37;
-            --accent-warm: #E8D7C3;
+            --primary-dark: #0d0a08;
+            --primary-light: #1a1410;
+            --accent-brand: #D4AF37;
+            --accent-secondary: #FFF8DC;
+            --accent-gold: #FFD700;
+            --accent-warm: #F0E68C;
             --text-light: #F5F1ED;
-            --text-muted: #B8B3AA;
-            --border-subtle: #3D3530;
+            --text-muted: #C0B8A8;
+            --border-subtle: #2a2420;
             --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -65,7 +66,7 @@
 
         body {
             font-family: 'Segoe UI', 'Helvetica Neue', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(to bottom, var(--primary-dark) 0%, #221c17 50%, var(--primary-dark) 100%);
+            background: linear-gradient(to bottom, var(--primary-dark) 0%, #1a1410 50%, var(--primary-dark) 100%);
             color: var(--text-light);
             line-height: 1.7;
             overflow-x: hidden;
@@ -115,16 +116,14 @@
             text-decoration: none;
         }
 
-        .logo-image {
-            width: 60px;
-            height: 60px;
-            background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"%3E%3Ccircle cx="100" cy="100" r="95" fill="%238B7355" stroke="%23E91E63" stroke-width="8"/%3E%3Ctext x="100" y="65" font-size="22" font-weight="bold" fill="%23E8D7C3" text-anchor="middle" font-family="Arial, sans-serif" letter-spacing="1"%3EGLOBAL%3C/text%3E%3Ctext x="100" y="125" font-size="16" font-weight="bold" fill="%23E8D7C3" text-anchor="middle" font-family="Arial, sans-serif"%3EAUTO SHOP%3C/text%3E%3Ccircle cx="100" cy="100" r="35" fill="none" stroke="%23E8D7C3" stroke-width="2" opacity="0.3"/%3E%3Cpath d="M75 95 Q85 85 95 95 L95 115 Q85 125 75 115 Z" fill="%23F4A140" opacity="0.8"/%3E%3C/svg%3E') center / contain no-repeat;
-            filter: drop-shadow(0 4px 12px rgba(233, 30, 99, 0.2));
+        .logo-brand img {
+            filter: drop-shadow(0 6px 20px rgba(212, 175, 55, 0.3));
             transition: var(--transition);
         }
 
-        .logo-brand:hover .logo-image {
-            filter: drop-shadow(0 6px 20px rgba(233, 30, 99, 0.4));
+        .logo-brand:hover img {
+            filter: drop-shadow(0 8px 28px rgba(212, 175, 55, 0.5)) brightness(1.1);
+            transform: scale(1.05);
         }
 
         .brand-text {
@@ -216,15 +215,17 @@
         }
 
         .btn-primary {
-            background: linear-gradient(135deg, var(--accent-brand) 0%, #C2185B 100%);
-            color: white;
-            box-shadow: 0 8px 24px rgba(233, 30, 99, 0.3);
+            background: linear-gradient(135deg, var(--accent-brand) 0%, #B8860B 100%);
+            color: #0d0a08;
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.4);
             border: none;
+            font-weight: 700;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 32px rgba(233, 30, 99, 0.5);
+            box-shadow: 0 12px 32px rgba(212, 175, 55, 0.6);
+            background: linear-gradient(135deg, #FFD700 0%, var(--accent-brand) 100%);
         }
 
         .btn-secondary {
@@ -252,7 +253,7 @@
         /* ===== HERO SECTION ===== */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--primary-dark) 0%, #2a1f1a 50%, var(--primary-dark) 100%);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a1410 50%, var(--primary-dark) 100%);
             position: relative;
             display: flex;
             align-items: center;
@@ -267,7 +268,7 @@
             right: -20%;
             width: 800px;
             height: 800px;
-            background: radial-gradient(circle, rgba(233, 30, 99, 0.08) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.12) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -278,7 +279,7 @@
             left: -30%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(212, 175, 55, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
             pointer-events: none;
         }
 
@@ -336,8 +337,8 @@
             display: inline-flex;
             align-items: center;
             gap: 1rem;
-            background: rgba(232, 215, 195, 0.08);
-            border: 1px solid var(--border-subtle);
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.3);
             padding: 1.2rem 2rem;
             border-radius: 3px;
             backdrop-filter: blur(10px);
@@ -364,6 +365,7 @@
         .services {
             padding: 8rem 3rem;
             position: relative;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1a1410 100%);
         }
 
         .services::before {
@@ -409,8 +411,8 @@
         }
 
         .service-card {
-            background: linear-gradient(135deg, rgba(45, 38, 33, 0.6) 0%, rgba(35, 28, 23, 0.6) 100%);
-            border: 1px solid var(--border-subtle);
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.7) 0%, rgba(13, 10, 8, 0.7) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             border-radius: 3px;
             padding: 2.5rem;
             transition: var(--transition);
@@ -493,7 +495,7 @@
         /* ===== FEATURES SECTION ===== */
         .features {
             padding: 8rem 3rem;
-            background: linear-gradient(135deg, #1a1410 0%, #2d2420 50%, #1a1410 100%);
+            background: linear-gradient(135deg, #0d0a08 0%, #1a1410 50%, #0d0a08 100%);
             position: relative;
         }
 
@@ -522,7 +524,7 @@
             display: flex;
             gap: 1.5rem;
             padding: 2rem;
-            background: rgba(232, 215, 195, 0.02);
+            background: rgba(212, 175, 55, 0.03);
             border-left: 3px solid var(--accent-brand);
             border-radius: 3px;
             transition: var(--transition);
@@ -538,7 +540,7 @@
             width: 60px;
             height: 60px;
             min-width: 60px;
-            background: linear-gradient(135deg, var(--accent-brand) 0%, #C2185B 100%);
+            background: linear-gradient(135deg, var(--accent-brand) 0%, #B8860B 100%);
             border-radius: 3px;
             display: flex;
             align-items: center;
@@ -583,8 +585,8 @@
             text-align: center;
             margin-bottom: 4rem;
             padding: 2.5rem;
-            background: rgba(232, 215, 195, 0.03);
-            border: 1px solid var(--border-subtle);
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 3px;
             backdrop-filter: blur(10px);
         }
@@ -608,8 +610,8 @@
         }
 
         .review-card {
-            background: linear-gradient(135deg, rgba(45, 38, 33, 0.6) 0%, rgba(35, 28, 23, 0.6) 100%);
-            border: 1px solid var(--border-subtle);
+            background: linear-gradient(135deg, rgba(26, 20, 16, 0.7) 0%, rgba(13, 10, 8, 0.7) 100%);
+            border: 1px solid rgba(212, 175, 55, 0.15);
             border-radius: 3px;
             padding: 2.2rem;
             transition: var(--transition);
@@ -660,7 +662,7 @@
         /* ===== APPOINTMENT SECTION ===== */
         .appointment {
             padding: 8rem 3rem;
-            background: linear-gradient(135deg, #1a1410 0%, #2d2420 50%, #1a1410 100%);
+            background: linear-gradient(135deg, #0d0a08 0%, #1a1410 50%, #0d0a08 100%);
             position: relative;
         }
 
@@ -698,8 +700,8 @@
         .form-group textarea {
             width: 100%;
             padding: 1rem;
-            background: rgba(45, 38, 33, 0.8);
-            border: 1px solid var(--border-subtle);
+            background: rgba(26, 20, 16, 0.9);
+            border: 1px solid rgba(212, 175, 55, 0.2);
             border-radius: 3px;
             color: var(--text-light);
             font-family: inherit;
@@ -716,9 +718,9 @@
         .form-group select:focus,
         .form-group textarea:focus {
             outline: none;
-            background: rgba(45, 38, 33, 1);
+            background: rgba(26, 20, 16, 1);
             border-color: var(--accent-brand);
-            box-shadow: 0 0 20px rgba(233, 30, 99, 0.2);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
         }
 
         .form-group textarea {
@@ -780,8 +782,8 @@
             display: flex;
             gap: 1.5rem;
             padding: 2rem;
-            background: rgba(232, 215, 195, 0.02);
-            border-left: 3px solid var(--accent-gold);
+            background: rgba(212, 175, 55, 0.03);
+            border-left: 3px solid var(--accent-brand);
             border-radius: 3px;
             transition: var(--transition);
         }
@@ -849,15 +851,16 @@
             right: 2.5rem;
             width: 70px;
             height: 70px;
-            background: linear-gradient(135deg, var(--accent-brand) 0%, #C2185B 100%);
+            background: linear-gradient(135deg, var(--accent-brand) 0%, #B8860B 100%);
             border: none;
             border-radius: 3px;
-            color: white;
+            color: #0d0a08;
             font-size: 1.8rem;
             cursor: pointer;
             z-index: 999;
-            box-shadow: 0 8px 32px rgba(233, 30, 99, 0.4);
+            box-shadow: 0 8px 32px rgba(212, 175, 55, 0.5);
             transition: var(--transition);
+            font-weight: 700;
         }
 
         .mobile-call-btn:active {
@@ -1121,7 +1124,7 @@
     <header class="header">
         <div class="header-container">
             <a href="#home" class="logo-brand">
-                <div class="logo-image"></div>
+                <img src="./logo.png" alt="Global Auto Shop" style="width: 70px; height: 70px; filter: drop-shadow(0 6px 20px rgba(212, 175, 55, 0.3));">
                 <div class="brand-text">
                     <div class="brand-name">Global Auto</div>
                     <div class="brand-tagline">Premium Service</div>
@@ -1406,7 +1409,7 @@
             <div class="footer-grid">
                 <div class="footer-section">
                     <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
-                        <div class="logo-image" style="width: 50px; height: 50px;"></div>
+                        <img src="./logo.png" alt="Global Auto Shop" style="width: 55px; height: 55px; filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));">
                         <div>
                             <strong style="color: var(--text-light); display: block;">Global Auto Shop</strong>
                             <span style="color: var(--accent-gold); font-size: 0.8rem;">Premium Service</span>
