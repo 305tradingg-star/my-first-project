@@ -1,0 +1,1037 @@
+<title>Ace Complete Auto Care</title>
+<meta name="description" content="Premium auto repair shop in Laredo, Texas. Expert mechanical services, 4.4/5 rating from 184 reviews.">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<style>
+  :root {
+    --color-bg: #fafafa;
+    --color-surface: #ffffff;
+    --color-text: #0f0f0f;
+    --color-text-secondary: #555555;
+    --color-border: #e0e0e0;
+    --color-accent-red: #d32f2f;
+    --color-accent-gold: #d4a574;
+    --color-dark: #1a1a1a;
+    --color-charcoal: #2d2d2d;
+    --color-silver: #e8e8e8;
+    --color-rating: #ffc107;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-2xl: 4rem;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --color-bg: #0f0f0f;
+      --color-surface: #1a1a1a;
+      --color-text: #ffffff;
+      --color-text-secondary: #b0b0b0;
+      --color-border: #333333;
+      color-scheme: dark;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --color-bg: #0f0f0f;
+    --color-surface: #1a1a1a;
+    --color-text: #ffffff;
+    --color-text-secondary: #b0b0b0;
+    --color-border: #333333;
+    color-scheme: dark;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body {
+    height: 100%;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* Typography */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  h3 {
+    font-size: 1.375rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Links & Buttons */
+  a {
+    color: var(--color-accent-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  a:hover {
+    color: var(--color-accent-gold);
+  }
+
+  .btn {
+    display: inline-block;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: none;
+    border-radius: 6px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-primary {
+    background: var(--color-accent-red);
+    color: white;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.3);
+  }
+
+  .btn-primary:hover {
+    background: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-accent-red);
+    border: 2px solid var(--color-accent-red);
+  }
+
+  .btn-secondary:hover {
+    background: var(--color-accent-red);
+    color: white;
+  }
+
+  .btn-tertiary {
+    background: var(--color-dark);
+    color: white;
+  }
+
+  .btn-tertiary:hover {
+    background: var(--color-charcoal);
+  }
+
+  /* Layout */
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+  }
+
+  .section {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  /* Header & Navigation */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-surface);
+    border-bottom: 1px solid var(--color-border);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) 0;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--color-accent-red), var(--color-accent-gold));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  nav ul {
+    display: none;
+    list-style: none;
+    gap: var(--spacing-lg);
+  }
+
+  @media (min-width: 768px) {
+    nav ul {
+      display: flex;
+    }
+  }
+
+  nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text);
+    transition: color 0.3s ease;
+  }
+
+  nav a:hover {
+    color: var(--color-accent-red);
+  }
+
+  /* Hero Section */
+  .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g1" x1="0" y1="0" x2="100" y2="100"><stop offset="0%25" style="stop-color:rgba(212,165,116,0.1);stop-opacity:1" /><stop offset="100%25" style="stop-color:rgba(211,47,47,0.05);stop-opacity:1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23g1)"/><circle cx="200" cy="150" r="300" fill="none" stroke="rgba(212,165,116,0.08)" stroke-width="1"/><circle cx="1000" cy="600" r="250" fill="none" stroke="rgba(211,47,47,0.08)" stroke-width="1"/></svg>') center/cover;
+    opacity: 0.5;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    max-width: 900px;
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .hero h1 {
+    color: white;
+    margin-bottom: var(--spacing-lg);
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+    color: var(--color-silver);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+
+  .rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    background: rgba(212, 165, 116, 0.15);
+    border: 1px solid rgba(212, 165, 116, 0.3);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 50px;
+    margin-bottom: var(--spacing-xl);
+    backdrop-filter: blur(10px);
+  }
+
+  .rating-badge .stars {
+    color: var(--color-rating);
+    font-size: 1rem;
+  }
+
+  .rating-badge span {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: var(--spacing-xl);
+  }
+
+  @media (max-width: 600px) {
+    .hero-buttons {
+      flex-direction: column;
+    }
+    .btn {
+      width: 100%;
+    }
+  }
+
+  /* Services Section */
+  .services {
+    background: var(--color-surface);
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+  }
+
+  .service-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent-red), var(--color-accent-gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--color-accent-red);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(211, 47, 47, 0.1);
+  }
+
+  .service-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .service-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+    display: block;
+  }
+
+  .service-card h3 {
+    color: var(--color-text);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .service-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* About Section */
+  .about {
+    background: var(--color-dark);
+    color: white;
+  }
+
+  .about h2 {
+    color: white;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    align-items: center;
+    margin-top: var(--spacing-xl);
+  }
+
+  @media (max-width: 768px) {
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .about-image {
+    position: relative;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(135deg, #333, #555);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 4rem;
+  }
+
+  .about-text p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+  }
+
+  .about-features {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  .feature-item {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  .feature-item .icon {
+    font-size: 1.5rem;
+    color: var(--color-accent-gold);
+    flex-shrink: 0;
+  }
+
+  .feature-item h4 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .feature-item p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+  }
+
+  /* Reviews Section */
+  .reviews {
+    background: var(--color-surface);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+  }
+
+  .review-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+    position: relative;
+  }
+
+  .review-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: var(--spacing-lg);
+    font-size: 4rem;
+    color: var(--color-accent-gold);
+    opacity: 0.3;
+    line-height: 0;
+  }
+
+  .review-stars {
+    color: var(--color-rating);
+    margin-bottom: var(--spacing-sm);
+    font-size: 0.9rem;
+  }
+
+  .review-text {
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    font-style: italic;
+    line-height: 1.7;
+  }
+
+  .review-author {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* Contact Section */
+  .contact {
+    background: var(--color-dark);
+    color: white;
+  }
+
+  .contact h2 {
+    color: white;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-2xl);
+    margin-top: var(--spacing-xl);
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xl);
+  }
+
+  .info-item {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: flex-start;
+  }
+
+  .info-item .icon {
+    font-size: 1.5rem;
+    color: var(--color-accent-gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .info-item h4 {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .info-item p, .info-item a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+  }
+
+  .hours-list {
+    list-style: none;
+  }
+
+  .hours-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .hours-list li:last-child {
+    border-bottom: none;
+  }
+
+  .hours-list .day {
+    font-weight: 600;
+    color: white;
+  }
+
+  .hours-list .time {
+    color: var(--color-accent-gold);
+  }
+
+  .hours-list .closed {
+    color: #999;
+  }
+
+  /* Map & Form Container */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+
+  .map-placeholder {
+    width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #333, #444);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 3rem;
+  }
+
+  /* Booking Form */
+  .booking-form {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: var(--spacing-lg);
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: white;
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    width: 100%;
+    padding: var(--spacing-sm);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+
+  .form-group input::placeholder,
+  .form-group select::placeholder,
+  .form-group textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-accent-gold);
+    box-shadow: 0 0 0 2px rgba(212, 165, 116, 0.2);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group button {
+    width: 100%;
+  }
+
+  /* Sticky Mobile Call Button */
+  .sticky-call {
+    display: none;
+    position: fixed;
+    bottom: var(--spacing-md);
+    right: var(--spacing-md);
+    z-index: 200;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--color-accent-red);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+    transition: all 0.3s ease;
+  }
+
+  @media (max-width: 768px) {
+    .sticky-call {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+  }
+
+  .sticky-call:active {
+    transform: scale(0.95);
+  }
+
+  /* Footer */
+  footer {
+    background: #0a0a0a;
+    color: rgba(255, 255, 255, 0.6);
+    text-align: center;
+    padding: var(--spacing-lg) 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .section h2 {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .service-card {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .review-card {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<!-- Header -->
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">⚙️ ACE</div>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="rating-badge">
+      <span class="stars">★★★★☆</span>
+      <span>4.4/5 Based on 184 Reviews</span>
+    </div>
+    <h1>Precision Service.<br>Complete Confidence.</h1>
+    <p class="hero-subtitle">Premium automotive repair and maintenance for luxury vehicles</p>
+    <div class="hero-buttons">
+      <button class="btn btn-primary" onclick="document.getElementById('booking').scrollIntoView({ behavior: 'smooth' })">Book an Appointment</button>
+      <a href="tel:+19567237433" class="btn btn-secondary">Call Now: +1 956-723-7433</a>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="section services" id="services">
+  <div class="container">
+    <h2>Our Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="service-icon">🔧</span>
+        <h3>Engine Diagnostics</h3>
+        <p>State-of-the-art computerized engine analysis and repair for all vehicle types.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🛞</span>
+        <h3>Brake Services</h3>
+        <p>Complete brake system inspection, repair, and replacement with premium components.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">⚡</span>
+        <h3>Electrical Systems</h3>
+        <p>Expert diagnosis and repair of battery, starter, alternator, and electrical components.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🔩</span>
+        <h3>Transmission Service</h3>
+        <p>Specialized transmission fluid changes, repairs, and complete overhauls.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">❄️</span>
+        <h3>Air Conditioning</h3>
+        <p>Professional A/C system repairs, refrigerant service, and climate control maintenance.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-icon">🧴</span>
+        <h3>Oil & Filter Changes</h3>
+        <p>Complete fluid replacement service using premium synthetic oils and filters.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section about" id="about">
+  <div class="container">
+    <h2>About Ace Complete Auto Care</h2>
+    <div class="about-content">
+      <div>
+        <p>With over two decades of experience serving Laredo's automotive community, Ace Complete Auto Care has earned a reputation for precision service and complete customer confidence. Our team of certified technicians uses only the finest parts and most advanced diagnostic equipment to ensure your vehicle receives the care it deserves.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <span class="icon">✓</span>
+            <div>
+              <h4>Certified Technicians</h4>
+              <p>ASE-certified professionals with expertise across all vehicle makes and models</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="icon">✓</span>
+            <div>
+              <h4>Premium Parts</h4>
+              <p>Only high-quality OEM and genuine replacement components used</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="icon">✓</span>
+            <div>
+              <h4>Advanced Technology</h4>
+              <p>State-of-the-art diagnostic equipment and service tools</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <span class="icon">✓</span>
+            <div>
+              <h4>Warranty Protection</h4>
+              <p>All repairs backed by comprehensive service warranties</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">🏎️</div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews Section -->
+<section class="section reviews" id="reviews">
+  <div class="container">
+    <h2>Customer Reviews</h2>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Fast service, sitting room in the office to wait, great price."</p>
+        <p class="review-author">Verified Customer</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Great service finished and worked on as promised."</p>
+        <p class="review-author">Verified Customer</p>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★☆</div>
+        <p class="review-text">"Professional service with friendly staff. Highly recommended for quality auto repair."</p>
+        <p class="review-author">Verified Customer</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact" id="contact">
+  <div class="container">
+    <h2>Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <div class="info-item">
+          <span class="icon">📍</span>
+          <div>
+            <h4>Location</h4>
+            <p>102 W Saunders St<br>Laredo, TX 78041<br>United States</p>
+            <p style="font-size: 0.85rem; color: #999; margin-top: 6px;">Plus Code: GGJ3+7H</p>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">📞</span>
+          <div>
+            <h4>Phone</h4>
+            <a href="tel:+19567237433">+1 956-723-7433</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">🌐</span>
+          <div>
+            <h4>Website</h4>
+            <a href="https://acecompleteautocare.com" target="_blank">acecompleteautocare.com</a>
+          </div>
+        </div>
+        <div class="info-item">
+          <span class="icon">⏰</span>
+          <div>
+            <h4>Business Hours</h4>
+            <ul class="hours-list">
+              <li><span class="day">Monday</span><span class="time">8:00 AM - 6:00 PM</span></li>
+              <li><span class="day">Tuesday</span><span class="time">8:00 AM - 6:00 PM</span></li>
+              <li><span class="day">Wednesday</span><span class="time">8:00 AM - 6:00 PM</span></li>
+              <li><span class="day">Thursday</span><span class="time">8:00 AM - 6:00 PM</span></li>
+              <li><span class="day">Friday</span><span class="time">8:00 AM - 6:00 PM</span></li>
+              <li><span class="day">Saturday</span><span class="time">8:00 AM - 2:00 PM</span></li>
+              <li><span class="day closed">Sunday</span><span class="closed">Closed</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-container">
+        <div class="map-placeholder">📍 Google Maps</div>
+        <form class="booking-form" id="booking" onsubmit="handleBooking(event)">
+          <h3 style="color: white; margin-bottom: var(--spacing-lg);">Book Your Appointment</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input type="text" id="name" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (956) 123-4567" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="your@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option value="engine">Engine Diagnostics</option>
+                <option value="brake">Brake Services</option>
+                <option value="electrical">Electrical Systems</option>
+                <option value="transmission">Transmission Service</option>
+                <option value="ac">Air Conditioning</option>
+                <option value="oil">Oil & Filter Changes</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vehicle">Vehicle Information</label>
+            <input type="text" id="vehicle" name="vehicle" placeholder="Year, Make, Model" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Preferred Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+          <div class="form-group">
+            <label for="notes">Additional Notes</label>
+            <textarea id="notes" name="notes" placeholder="Describe your service needs..." rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Schedule Appointment</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <p>&copy; 2024 Ace Complete Auto Care. All rights reserved. | Premium Auto Repair Services in Laredo, TX</p>
+  </div>
+</footer>
+
+<!-- Sticky Mobile Call Button -->
+<button class="sticky-call" onclick="window.location.href='tel:+19567237433'">
+  📞 Call
+</button>
+
+<script>
+  function handleBooking(e) {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = {
+      name: formData.get('name'),
+      phone: formData.get('phone'),
+      email: formData.get('email'),
+      service: formData.get('service'),
+      vehicle: formData.get('vehicle'),
+      date: formData.get('date'),
+      notes: formData.get('notes')
+    };
+
+    // In a real implementation, this would send the data to a backend
+    console.log('Booking request:', data);
+
+    // Show confirmation
+    const message = `Thank you, ${data.name}! Your appointment request for ${data.date} has been received. We'll confirm shortly at ${data.phone}.`;
+    alert(message);
+
+    // Reset form
+    e.target.reset();
+  }
+
+  // Smooth scroll for navigation
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const href = this.getAttribute('href');
+      if (href !== '#' && document.querySelector(href)) {
+        e.preventDefault();
+        document.querySelector(href).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Add scroll animation trigger
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -100px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.service-card, .review-card').forEach(el => {
+    observer.observe(el);
+  });
+</script>
