@@ -967,7 +967,13 @@
       </div>
 
       <div class="form-container">
-        <div id="map"></div>
+        <div class="map-placeholder" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: var(--spacing-md);">
+          <span style="font-size: 3rem;">📍</span>
+          <div style="text-align: center;">
+            <h4 style="color: white; margin-bottom: var(--spacing-sm);">Ace Complete Auto Care</h4>
+            <p style="color: rgba(255,255,255,0.8); margin: 0;">102 W Saunders St<br>Laredo, TX 78041</p>
+          </div>
+        </div>
         <form class="booking-form" id="booking" onsubmit="handleBooking(event)">
           <h3 style="color: white; margin-bottom: var(--spacing-lg);">Book Your Appointment</h3>
           <div class="form-row">
@@ -1030,38 +1036,7 @@
   📞 Call
 </button>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
-  // Load Leaflet CSS
-  const leafletCSS = document.createElement('link');
-  leafletCSS.rel = 'stylesheet';
-  leafletCSS.href = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css';
-  document.head.appendChild(leafletCSS);
-
-  // Initialize map
-  setTimeout(() => {
-    const map = L.map('map').setView([27.5307273, -99.4960168], 16);
-
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '© OpenStreetMap contributors',
-    maxZoom: 19
-  }).addTo(map);
-
-  // Add marker
-  const marker = L.circleMarker([27.5307273, -99.4960168], {
-    radius: 12,
-    fillColor: '#d32f2f',
-    color: '#d4a574',
-    weight: 3,
-    opacity: 1,
-    fillOpacity: 0.8
-  }).addTo(map);
-
-    marker.bindPopup('<strong>Ace Complete Auto Care</strong><br>102 W Saunders St<br>Laredo, TX 78041<br><a href="https://www.google.com/maps/place/Ace+Complete+Auto+Care/@27.5307273,-99.4960168,17z" target="_blank">View on Google Maps</a>', {
-      className: 'custom-popup'
-    }).openPopup();
-  }, 100);
-
   function handleBooking(e) {
     e.preventDefault();
 
