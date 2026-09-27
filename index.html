@@ -940,24 +940,27 @@
         }
 
         .social-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(212, 175, 55, 0.1);
-            border: 1px solid var(--accent-gold);
-            border-radius: 3px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, var(--accent-brand) 0%, var(--accent-gold) 100%);
+            border: 2px solid var(--accent-gold);
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--accent-gold);
+            color: white;
             text-decoration: none;
             transition: var(--transition);
-            font-size: 1rem;
-            font-weight: 600;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
         }
 
         .social-icon:hover {
-            background: var(--accent-gold);
-            color: var(--primary-dark);
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-brand) 100%);
+            color: white;
+            transform: scale(1.15);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.6);
         }
 
         .payment-methods {
