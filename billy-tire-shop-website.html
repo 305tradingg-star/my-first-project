@@ -1,16 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Billy Tire Shop 2 | Tires & Auto Repair in Jackson, AL</title>
-    <meta name="description" content="Billy Tire Shop 2 provides fast, affordable tire services and auto repair in Jackson, Alabama. Call today for tire repair, replacement, installation, and more.">
-    <meta name="keywords" content="tire shop Jackson Alabama, auto repair Jackson AL, tire repair near me, flat tire repair Jackson Alabama, affordable tires Jackson AL">
-    <meta name="author" content="Billy Tire Shop 2">
-    <meta property="og:title" content="Billy Tire Shop 2 | Tires & Auto Repair in Jackson, AL">
-    <meta property="og:description" content="Fast, affordable tire services and auto repair in Jackson, Alabama.">
-    <meta property="og:type" content="business.business">
+    <title>Billy Tire Shop 2</title>
+    <meta name="description" content="خدمات إطارات وإصلاح سيارات سريعة وموثوقة في جاكسون، ألاباما">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap">
     <style>
+        /* Design System: Premium tire shop with red/white/black palette
+           Layout: Modern grid-based with strong hierarchy and breathing room */
+
+        :root {
+            --black: #1a1a1a;
+            --red: #dc2626;
+            --red-dark: #991b1b;
+            --white: #ffffff;
+            --gray-50: #f9fafb;
+            --gray-200: #e5e7eb;
+            --gray-600: #4b5563;
+            --gray-900: #111827;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --black: #0f0f0f;
+                --white: #f5f5f5;
+                --gray-50: #1a1a1a;
+                --gray-200: #2d2d2d;
+                --gray-600: #b0b0b0;
+                --gray-900: #ffffff;
+                color-scheme: dark;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --black: #0f0f0f;
+            --white: #f5f5f5;
+            --gray-50: #1a1a1a;
+            --gray-200: #2d2d2d;
+            --gray-600: #b0b0b0;
+            --gray-900: #ffffff;
+            color-scheme: dark;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -21,57 +53,74 @@
             scroll-behavior: smooth;
         }
 
-        :root {
-            --primary-dark: #001a33;
-            --primary-navy: #003d66;
-            --accent-red: #cc0000;
-            --text-dark: #1a1a1a;
-            --text-light: #ffffff;
-            --bg-light: #f5f5f5;
-            --border-gray: #e0e0e0;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--black);
+            background: var(--white);
+            padding: 0 16px;
         }
 
-        /* Header and Navigation */
+        /* Typography Scale */
+        h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: clamp(1.6rem, 4vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            max-width: 65ch;
+        }
+
+        /* Header */
         header {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            padding: 1rem 0;
             position: sticky;
             top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            background: var(--white);
+            border-bottom: 2px solid var(--red);
+            padding: 1.5rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
         }
 
-        .header-container {
+        .header-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 2rem;
         }
 
-        .logo-section {
+        .logo {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--black);
+            text-decoration: none;
+            letter-spacing: -0.02em;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
-        .logo-icon {
+        .logo span {
+            color: var(--red);
             font-size: 2rem;
-        }
-
-        .business-name {
-            font-size: 1.5rem;
-            font-weight: bold;
-            letter-spacing: 0.5px;
         }
 
         nav {
@@ -81,142 +130,106 @@
         }
 
         nav a {
-            color: var(--text-light);
+            color: var(--black);
             text-decoration: none;
             font-weight: 500;
-            transition: color 0.3s ease;
-            font-size: 0.95rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--red);
+            transition: width 0.3s;
         }
 
         nav a:hover {
-            color: var(--accent-red);
+            color: var(--red);
         }
 
-        .header-buttons {
-            display: flex;
-            gap: 0.5rem;
-            align-items: center;
+        nav a:hover::after {
+            width: 100%;
         }
 
-        .btn-call, .btn-directions {
-            padding: 0.6rem 1.2rem;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            display: inline-block;
-        }
-
-        .btn-call {
-            background-color: var(--accent-red);
-            color: white;
-        }
-
-        .btn-call:hover {
-            background-color: #b30000;
-            transform: translateY(-2px);
-        }
-
-        .btn-directions {
-            background-color: transparent;
-            color: var(--text-light);
-            border: 2px solid var(--text-light);
-        }
-
-        .btn-directions:hover {
-            background-color: var(--text-light);
-            color: var(--primary-dark);
-        }
-
-        .menu-toggle {
+        .btn-header {
             display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
         }
 
-        /* Mobile Menu */
         @media (max-width: 768px) {
             nav {
                 display: none;
-                position: absolute;
-                top: 70px;
-                left: 0;
-                right: 0;
-                flex-direction: column;
-                background-color: var(--primary-navy);
-                padding: 1rem;
-                gap: 1rem;
             }
 
-            nav.active {
-                display: flex;
-            }
-
-            .header-buttons {
-                flex-direction: column;
-                width: 100%;
-                gap: 0.5rem;
-            }
-
-            .menu-toggle {
+            .btn-header {
                 display: block;
+                padding: 0.75rem 1.5rem;
+                background: var(--red);
+                color: var(--white);
+                border: none;
+                font-weight: 600;
+                cursor: pointer;
+                text-decoration: none;
+                border-radius: 4px;
+                font-size: 0.95rem;
             }
 
-            .business-name {
-                font-size: 1.2rem;
+            .btn-header:hover {
+                background: var(--red-dark);
             }
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
-            position: relative;
-            height: 500px;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding: 4rem 0;
             text-align: center;
+            background: linear-gradient(135deg, var(--black) 0%, var(--black) 100%);
+            color: var(--white);
+            border-radius: 8px;
             overflow: hidden;
+            position: relative;
         }
 
         .hero::before {
             content: '';
             position: absolute;
             top: 0;
-            left: 0;
             right: 0;
-            bottom: 0;
-            background-color: rgba(0, 26, 51, 0.4);
-            z-index: 1;
+            width: 400px;
+            height: 400px;
+            background: var(--red);
+            opacity: 0.1;
+            border-radius: 50%;
+            filter: blur(60px);
         }
 
         .hero-content {
             position: relative;
-            z-index: 2;
-            max-width: 600px;
-            padding: 2rem;
-            animation: fadeInUp 0.8s ease;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .hero h1 {
-            font-size: 2.8rem;
+            color: var(--white);
             margin-bottom: 1rem;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-accent {
+            color: var(--red);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            color: #d1d5db;
+            font-size: 1.15rem;
             margin-bottom: 2rem;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
         }
 
         .hero-buttons {
@@ -224,155 +237,130 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+            margin-top: 2.5rem;
         }
 
-        .btn-primary, .btn-secondary {
+        .btn {
             padding: 1rem 2rem;
-            border: none;
-            border-radius: 4px;
             font-size: 1rem;
-            font-weight: bold;
+            font-weight: 600;
+            border: none;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            border-radius: 4px;
+            transition: all 0.3s;
             display: inline-block;
         }
 
         .btn-primary {
-            background-color: var(--accent-red);
-            color: white;
+            background: var(--red);
+            color: var(--white);
         }
 
         .btn-primary:hover {
-            background-color: #b30000;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(204, 0, 0, 0.3);
+            background: var(--red-dark);
+            transform: translateY(-2px);
         }
 
         .btn-secondary {
-            background-color: white;
-            color: var(--primary-dark);
-            border: 2px solid white;
+            background: var(--white);
+            color: var(--black);
+            border: 2px solid var(--white);
         }
 
         .btn-secondary:hover {
-            background-color: transparent;
-            color: white;
+            background: transparent;
+            color: var(--white);
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                height: 350px;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .hero-buttons {
-                gap: 0.5rem;
-            }
-
-            .btn-primary, .btn-secondary {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Trust Section */
-        .trust-section {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 3rem 1rem;
-        }
-
-        .trust-container {
+        /* Section */
+        section {
             max-width: 1200px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            text-align: center;
-        }
-
-        .trust-item h3 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-red);
-        }
-
-        .trust-item p {
-            font-size: 0.95rem;
-            opacity: 0.9;
-        }
-
-        .star-rating {
-            font-size: 1.2rem;
-            color: var(--accent-red);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Services Section */
-        .services-section {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 1rem;
+            padding: 4rem 0;
         }
 
         .section-title {
             font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary-dark);
-            font-weight: bold;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
         }
 
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--red);
+        }
+
+        .section-subtitle {
+            color: var(--gray-600);
+            margin-bottom: 3rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Trust Section */
+        .trust {
+            background: var(--black);
+            color: var(--white);
+            margin: 0 -16px;
+            padding: 4rem 16px;
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-item .number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--red);
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-item h3 {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .trust-item p {
+            color: #9ca3af;
+            font-size: 0.95rem;
+        }
+
+        /* Services */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
         }
 
         .service-card {
-            background-color: white;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
             padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
             text-align: center;
-            transition: all 0.3s ease;
-            border-top: 4px solid var(--accent-red);
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .service-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: var(--primary-dark);
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: #666;
+            border-color: var(--red);
+            box-shadow: 0 8px 24px rgba(220, 38, 38, 0.15);
+            transform: translateY(-4px);
         }
 
         .service-icon {
@@ -380,16 +368,17 @@
             margin-bottom: 1rem;
         }
 
-        /* About Section */
-        .about-section {
-            background-color: white;
-            padding: 3rem 1rem;
-            margin: 3rem 0;
+        .service-card h3 {
+            margin-bottom: 0.75rem;
         }
 
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
+        .service-card p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+        }
+
+        /* About */
+        .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
@@ -399,85 +388,242 @@
         .about-image img {
             width: 100%;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .about-image img:hover {
-            transform: scale(1.02);
+            border: 2px solid var(--red);
         }
 
         .about-text h2 {
-            font-size: 2rem;
             margin-bottom: 1.5rem;
-            color: var(--primary-dark);
         }
 
         .about-text p {
-            font-size: 1.05rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1rem;
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 768px) {
-            .about-container {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
-            .about-text h2 {
-                font-size: 1.6rem;
+            .hero {
+                padding: 3rem 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
             }
         }
 
-        /* Why Choose Us */
-        .why-section {
-            background-color: var(--bg-light);
-            padding: 3rem 1rem;
-        }
-
-        .why-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
+        /* Why Choose */
         .why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
         .why-item {
-            background-color: white;
-            padding: 1.5rem;
+            background: var(--gray-50);
+            padding: 2rem;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            text-align: center;
+            border-left: 4px solid var(--red);
         }
 
         .why-item h3 {
-            color: var(--accent-red);
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
+            color: var(--red);
+            margin-bottom: 0.75rem;
         }
 
         .why-item p {
-            font-size: 0.9rem;
-            color: #666;
+            color: var(--gray-600);
+            font-size: 0.95rem;
         }
 
-        /* Photo Gallery */
-        .gallery-section {
-            background-color: white;
-            padding: 3rem 1rem;
+        /* Reviews */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
         }
 
-        .gallery-container {
+        .review-card {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 3px solid var(--red);
+        }
+
+        .stars {
+            color: var(--red);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .review-text {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        /* Hours */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .hours-column {
+            background: var(--gray-50);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+
+        .hours-column h3 {
+            color: var(--red);
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid var(--red);
+            padding-bottom: 0.75rem;
+        }
+
+        .hours-column ul {
+            list-style: none;
+        }
+
+        .hours-column li {
+            padding: 0.5rem 0;
+            color: var(--gray-600);
+        }
+
+        @media (max-width: 768px) {
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Contact */
+        .contact {
+            background: var(--black);
+            color: var(--white);
+            margin: 0 -16px;
+            padding: 4rem 16px;
+        }
+
+        .contact-wrapper {
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+
+        .contact-info h3 {
+            color: var(--red);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: #d1d5db;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info a {
+            color: var(--red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: var(--white);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--gray-200);
+            border-radius: 4px;
+            font-family: inherit;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--white);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #9ca3af;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-group button {
+            padding: 0.75rem;
+            background: var(--red);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background: var(--red-dark);
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+
+        /* Gallery */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -489,764 +635,383 @@
             position: relative;
             overflow: hidden;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 16 / 10;
             cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.03);
+            border: 2px solid var(--red);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 350px;
+            height: 100%;
             object-fit: cover;
-            display: block;
-            border-radius: 8px;
+            transition: transform 0.3s;
         }
 
-        .gallery-caption {
-            text-align: center;
-            margin-top: 1rem;
-            color: #666;
-            font-style: italic;
-        }
-
-        /* Lightbox */
-        .lightbox {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.9);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-        }
-
-        .lightbox-image {
-            max-width: 100%;
-            max-height: 85vh;
-            border-radius: 8px;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: -40px;
-            right: 0;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-        }
-
-        /* Reviews Section */
-        .reviews-section {
-            background-color: var(--bg-light);
-            padding: 3rem 1rem;
-        }
-
-        .reviews-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .review-card {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--accent-red);
-        }
-
-        .review-stars {
-            color: var(--accent-red);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .review-text {
-            color: #555;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            font-style: italic;
-        }
-
-        .review-author {
-            margin-top: 1rem;
-            color: var(--primary-dark);
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .read-more-btn {
-            display: block;
-            margin: 2rem auto 0;
-            padding: 1rem 2rem;
-            background-color: var(--accent-red);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            text-decoration: none;
-            max-width: 200px;
-            text-align: center;
-            transition: background-color 0.3s ease;
-        }
-
-        .read-more-btn:hover {
-            background-color: #b30000;
-        }
-
-        /* Hours Section */
-        .hours-section {
-            background-color: white;
-            padding: 3rem 1rem;
-        }
-
-        .hours-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hours-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 2rem;
-        }
-
-        .hours-column h3 {
-            color: var(--primary-dark);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            border-bottom: 2px solid var(--accent-red);
-            padding-bottom: 0.5rem;
-        }
-
-        .hours-column ul {
-            list-style: none;
-        }
-
-        .hours-column li {
-            padding: 0.5rem 0;
-            color: #555;
-        }
-
-        .hours-note {
-            background-color: var(--bg-light);
-            padding: 1.5rem;
-            border-left: 4px solid var(--accent-red);
-            margin-top: 2rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        @media (max-width: 768px) {
-            .hours-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background-color: var(--primary-dark);
-            color: white;
-            padding: 3rem 1rem;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-red);
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-
-        .contact-info a {
-            color: var(--accent-red);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form label {
-            font-weight: bold;
-            margin-bottom: 0.3rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 0.8rem;
-            border: none;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 0.95rem;
-        }
-
-        .contact-form textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .contact-form button {
-            padding: 1rem;
-            background-color: var(--accent-red);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background-color: #b30000;
-        }
-
-        .contact-note {
-            background-color: rgba(255, 255, 255, 0.1);
-            padding: 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            margin-top: 1rem;
-        }
-
-        .contact-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            margin-top: 1.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .contact-container {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-buttons {
-                flex-direction: column;
-            }
+        .gallery-item:hover img {
+            transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background-color: #000;
-            color: white;
-            padding: 2rem 1rem;
-            text-align: center;
+            background: var(--black);
+            color: var(--white);
+            padding: 3rem 16px 1rem;
+            margin-top: 4rem;
+            border-top: 2px solid var(--red);
         }
 
-        .footer-content {
+        .footer-wrapper {
             max-width: 1200px;
             margin: 0 auto;
         }
 
-        .footer-info {
+        .footer-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 2rem;
             margin-bottom: 2rem;
-            text-align: left;
         }
 
         .footer-section h4 {
-            color: var(--accent-red);
+            color: var(--red);
             margin-bottom: 1rem;
-            font-size: 1.1rem;
+            font-weight: 600;
         }
 
         .footer-section ul {
             list-style: none;
         }
 
-        .footer-section ul li {
+        .footer-section li {
             margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
         }
 
         .footer-section a {
-            color: #ccc;
+            color: #d1d5db;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
         }
 
         .footer-section a:hover {
-            color: var(--accent-red);
+            color: var(--red);
         }
 
         .footer-bottom {
-            border-top: 1px solid #333;
-            padding-top: 2rem;
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-            justify-content: center;
-        }
-
-        .social-link {
-            display: inline-block;
-            width: 40px;
-            height: 40px;
-            background-color: var(--accent-red);
-            border-radius: 50%;
-            line-height: 40px;
+            border-top: 1px solid var(--gray-200);
+            padding-top: 1.5rem;
             text-align: center;
-            color: white;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
+            color: #9ca3af;
+            font-size: 0.9rem;
         }
 
-        .social-link:hover {
-            background-color: #b30000;
-        }
-
-        /* Sticky Mobile Call Button */
-        .sticky-call-btn {
+        /* Call Button Mobile */
+        .sticky-call {
             display: none;
             position: fixed;
             bottom: 2rem;
-            right: 1rem;
+            right: 2rem;
             width: 60px;
             height: 60px;
-            background-color: var(--accent-red);
-            color: white;
-            border: none;
+            background: var(--red);
+            color: var(--white);
             border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            z-index: 99;
-            transition: all 0.3s ease;
             text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+            z-index: 999;
+            transition: all 0.3s;
         }
 
-        .sticky-call-btn:hover {
-            background-color: #b30000;
+        .sticky-call:hover {
+            background: var(--red-dark);
             transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
-            .sticky-call-btn {
+            .sticky-call {
                 display: flex;
             }
 
-            nav a {
-                font-size: 0.85rem;
-            }
-
-            .btn-call, .btn-directions {
-                padding: 0.5rem 1rem;
-                font-size: 0.85rem;
+            .nav-desktop {
+                display: none;
             }
         }
 
-        /* Utility */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
+        @media (min-width: 769px) {
+            .btn-header {
+                display: none !important;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "AutoRepair",
-        "name": "Billy Tire Shop 2",
-        "image": "https://example.com/images/shop.jpg",
-        "description": "Fast, affordable tire services and auto repair in Jackson, Alabama.",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "4055 N College Ave",
-            "addressLocality": "Jackson",
-            "addressRegion": "AL",
-            "postalCode": "36545",
-            "addressCountry": "US"
-        },
-        "telephone": "+1-251-262-1083",
-        "url": "https://billytireshop2.com",
-        "openingHoursSpecification": [
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                "opens": "07:00",
-                "closes": "18:00"
-            },
-            {
-                "@type": "OpeningHoursSpecification",
-                "dayOfWeek": "Sunday",
-                "opens": "09:00",
-                "closes": "16:00"
-            }
-        ],
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.4",
-            "reviewCount": "29"
-        },
-        "paymentAccepted": ["Credit Card", "Debit Card", "Mobile Payment"],
-        "priceRange": "$$",
-        "areaServed": "Jackson, AL"
-    }
-    </script>
-
     <!-- Header -->
     <header>
-        <div class="header-container">
-            <div class="logo-section">
-                <span class="logo-icon">🛞</span>
-                <span class="business-name">Billy Tire Shop 2</span>
-            </div>
-            <nav id="navbar">
-                <a href="#home">Home</a>
-                <a href="#services">Services</a>
-                <a href="#reviews">Reviews</a>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+        <div class="header-wrapper">
+            <a href="#home" class="logo">
+                <span>🛞</span>
+                <div>Billy Tire<br>Shop 2</div>
+            </a>
+            <nav class="nav-desktop">
+                <a href="#services">الخدمات</a>
+                <a href="#about">معلومات</a>
+                <a href="#reviews">تقييمات</a>
+                <a href="#contact">اتصل</a>
             </nav>
-            <div class="header-buttons">
-                <a href="tel:+12512621083" class="btn-call">Call Now</a>
-                <a href="https://maps.google.com/maps?q=4055+N+College+Ave,+Jackson,+AL+36545" target="_blank" class="btn-directions">Directions</a>
-                <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            </div>
+            <a href="tel:+12512621083" class="btn btn-header">اتصل الآن</a>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home" style="background-image: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 1200 600%22><rect fill=%22%23333%22 width=%221200%22 height=%22600%22/></svg>')">
+    <!-- Hero -->
+    <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Reliable Tires. Fast Service. Great Prices.</h1>
-            <p>Billy Tire Shop 2 provides fast, affordable tire services and dependable auto repair in Jackson, Alabama.</p>
+            <h1>إطارات موثوقة<span class="hero-accent">.</span> خدمة سريعة<span class="hero-accent">.</span> أسعار عادلة</h1>
+            <p>خدمات إطارات وإصلاح سيارات احترافية في جاكسون، ألاباما</p>
             <div class="hero-buttons">
-                <a href="tel:+12512621083" class="btn-primary">Call Now</a>
-                <a href="https://maps.google.com/maps?q=4055+N+College+Ave,+Jackson,+AL+36545" target="_blank" class="btn-secondary">Get Directions</a>
+                <a href="tel:+12512621083" class="btn btn-primary">اتصل الآن</a>
+                <a href="https://maps.google.com/maps?q=4055+N+College+Ave,+Jackson,+AL+36545" target="_blank" class="btn btn-secondary">اتجاهات</a>
             </div>
         </div>
     </section>
 
     <!-- Trust Section -->
-    <section class="trust-section">
-        <div class="trust-container">
+    <section class="trust">
+        <div class="trust-grid">
             <div class="trust-item">
-                <div class="star-rating">★★★★☆ 4.4/5</div>
-                <h3>29 Reviews</h3>
-                <p>Highly Rated by Customers</p>
+                <div class="number">4.4</div>
+                <h3>تقييم من 5</h3>
+                <p>29 تقييم من العملاء</p>
             </div>
             <div class="trust-item">
-                <h3>⚡ Fast Service</h3>
-                <p>Quick turnaround times</p>
+                <div class="number">⚡</div>
+                <h3>خدمة سريعة</h3>
+                <p>إنجاز فوري وموثوق</p>
             </div>
             <div class="trust-item">
-                <h3>💰 Affordable Prices</h3>
-                <p>Best value in town</p>
+                <div class="number">💰</div>
+                <h3>أسعار منافسة</h3>
+                <p>أفضل قيمة في المدينة</p>
             </div>
             <div class="trust-item">
-                <h3>😊 Friendly Staff</h3>
-                <p>Professional and polite</p>
+                <div class="number">😊</div>
+                <h3>فريق ودود</h3>
+                <p>احترافيون ومهذبون</p>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services-section" id="services">
-        <h2 class="section-title">Our Services</h2>
+    <!-- Services -->
+    <section id="services">
+        <h2 class="section-title">خدماتنا</h2>
+        <p class="section-subtitle">نوفر حلول إطارات وإصلاح سيارات شاملة</p>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🛞</div>
-                <h3>New & Used Tires</h3>
-                <p>Wide selection of quality tires for all vehicle types</p>
+                <h3>إطارات جديدة ومستعملة</h3>
+                <p>تشكيلة واسعة من الإطارات عالية الجودة لكل أنواع المركبات</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔧</div>
-                <h3>Tire Installation</h3>
-                <p>Professional installation with wheel balancing</p>
+                <h3>تركيب الإطارات</h3>
+                <p>تركيب احترافي مع موازنة العجل</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔨</div>
-                <h3>Tire Repair</h3>
-                <p>Expert repair for punctures and damage</p>
+                <h3>إصلاح الإطارات</h3>
+                <p>إصلاح متخصص للثقوب والأضرار</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">⚠️</div>
-                <h3>Flat Tire Repair</h3>
-                <p>Quick fixes for flat tires</p>
+                <h3>إصلاح الإطارات المثقوبة</h3>
+                <p>حل سريع للإطارات المثقوبة</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔄</div>
-                <h3>Tire Replacement</h3>
-                <p>Complete tire replacement services</p>
+                <h3>استبدال الإطارات</h3>
+                <p>خدمات استبدال الإطارات الكاملة</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🌀</div>
-                <h3>Tire Rotation</h3>
-                <p>Regular maintenance for tire longevity</p>
+                <h3>تدوير الإطارات</h3>
+                <p>صيانة دورية لتمديد عمر الإطارات</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🚗</div>
-                <h3>Wheel & Tire Services</h3>
-                <p>Comprehensive wheel and tire care</p>
+                <h3>خدمات الإطارات والعجل</h3>
+                <p>رعاية شاملة للإطارات والعجل</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">🔩</div>
-                <h3>General Auto Repair</h3>
-                <p>Complete vehicle maintenance and repairs</p>
+                <h3>إصلاح السيارات العام</h3>
+                <p>صيانة وإصلاح المركبات الشاملة</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">📞</div>
-                <h3>Roadside Assistance</h3>
-                <p>Ask us about roadside tire assistance</p>
+                <h3>مساعدة الطريق</h3>
+                <p>استفسر عن خدمات مساعدة الطريق</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about-section" id="about">
-        <div class="about-container">
+    <!-- About -->
+    <section id="about">
+        <h2 class="section-title">عن الشركة</h2>
+        <p class="section-subtitle">شركة محلية موثوقة تخدم السائقين</p>
+        <div class="about-grid">
             <div class="about-image">
-                <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23ddd%22 width=%22400%22 height=%22300%22/><text x=%22200%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2218%22 fill=%22%23999%22>Wheel Display Image</text></svg>" alt="Billy Tire Shop 2 tire and auto repair shop in Jackson, Alabama." onclick="openLightbox(this)">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'><rect fill='%23e5e7eb' width='400' height='300'/><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-size='18' fill='%236b7280'>صورة المتجر</text></svg>" alt="Billy Tire Shop 2 في جاكسون ألاباما">
             </div>
             <div class="about-text">
-                <h2>About Billy Tire Shop 2</h2>
-                <p>Billy Tire Shop 2 is a local tire and auto repair shop serving drivers in Jackson, Alabama. Our team focuses on fast service, fair prices, and helping customers get safely back on the road. Whether you need a tire repaired, replaced, or checked, our friendly staff is ready to help.</p>
-                <p>With years of experience in tire and automotive services, we've built our reputation on reliability, quality workmanship, and exceptional customer service. We take pride in treating every customer with respect and delivering the best value for their money.</p>
+                <h2>Billy Tire Shop 2</h2>
+                <p>متجر محلي متخصص في إطارات وإصلاح السيارات يخدم سائقي جاكسون بولاية ألاباما. فريقنا يركز على الخدمة السريعة والأسعار العادلة والمساعدة المهنية لإعادة الجميع إلى الطريق بأمان.</p>
+                <p>سواء كنت بحاجة لإصلاح إطار أو استبداله أو فحصه، فريقنا الودود جاهز لمساعدتك بكفاءة واحترافية.</p>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us -->
-    <section class="why-section">
-        <div class="why-container">
-            <h2 class="section-title">Why Choose Billy Tire Shop 2?</h2>
-            <div class="why-grid">
-                <div class="why-item">
-                    <h3>⚡ Fast Service</h3>
-                    <p>Quick turnaround and efficient service</p>
-                </div>
-                <div class="why-item">
-                    <h3>💰 Competitive Prices</h3>
-                    <p>Affordable rates without compromising quality</p>
-                </div>
-                <div class="why-item">
-                    <h3>😊 Friendly Staff</h3>
-                    <p>Professional, polite, and helpful team</p>
-                </div>
-                <div class="why-item">
-                    <h3>📍 Local Location</h3>
-                    <p>Convenient Jackson, Alabama location</p>
-                </div>
-                <div class="why-item">
-                    <h3>🔧 On-Site Service</h3>
-                    <p>Complete services at our shop</p>
-                </div>
-                <div class="why-item">
-                    <h3>💳 Multiple Payments</h3>
-                    <p>Credit cards, debit, NFC mobile payments</p>
-                </div>
-                <div class="why-item">
-                    <h3>♿ Accessible</h3>
-                    <p>Wheelchair-accessible entrance and facilities</p>
-                </div>
-                <div class="why-item">
-                    <h3>🎯 Trusted Quality</h3>
-                    <p>4.4-star rating from satisfied customers</p>
-                </div>
+    <section>
+        <h2 class="section-title">لماذا تختارنا</h2>
+        <p class="section-subtitle">ما يميزنا عن الآخرين</p>
+        <div class="why-grid">
+            <div class="why-item">
+                <h3>⚡ خدمة سريعة</h3>
+                <p>وقت سريع للإنجاز وكفاءة عالية</p>
+            </div>
+            <div class="why-item">
+                <h3>💰 أسعار منافسة</h3>
+                <p>أسعار عادلة دون المساس بالجودة</p>
+            </div>
+            <div class="why-item">
+                <h3>😊 فريق ودود</h3>
+                <p>محترفون مهذبون وموثوقون</p>
+            </div>
+            <div class="why-item">
+                <h3>📍 موقع مناسب</h3>
+                <p>موقع سهل الوصول في جاكسون</p>
+            </div>
+            <div class="why-item">
+                <h3>🔧 خدمات شاملة</h3>
+                <p>كل ما تحتاجه في مكان واحد</p>
+            </div>
+            <div class="why-item">
+                <h3>💳 طرق دفع متعددة</h3>
+                <p>بطاقات ائتمان وأموال إلكترونية</p>
+            </div>
+            <div class="why-item">
+                <h3>♿ سهل الوصول</h3>
+                <p>دخول وسهولات للكراسي المتحركة</p>
+            </div>
+            <div class="why-item">
+                <h3>⭐ موثوق من العملاء</h3>
+                <p>تقييم 4.4 من العملاء الراضين</p>
             </div>
         </div>
     </section>
 
-    <!-- Photo Gallery -->
-    <section class="gallery-section">
-        <div class="gallery-container">
-            <h2 class="section-title">See Billy Tire Shop 2</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23e0e0e0%22 width=%22400%22 height=%22300%22/><text x=%22200%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22 fill=%22%23999%22>Shop Display Photo</text></svg>" alt="Billy Tire Shop 2 tire and auto repair shop in Jackson, Alabama." onclick="openLightbox(this)">
-                </div>
-                <div class="gallery-item">
-                    <img src="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23d9d9d9%22 width=%22400%22 height=%22300%22/><text x=%22200%22 y=%22150%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22 fill=%22%23999%22>Wheel Details Photo</text></svg>" alt="Billy Tire Shop 2 tire and auto repair shop in Jackson, Alabama." onclick="openLightbox(this)">
-                </div>
-            </div>
-            <p class="gallery-caption">Fast, friendly, and dependable tire service in Jackson, Alabama.</p>
+    <!-- Gallery -->
+    <section>
+        <h2 class="section-title">صور المتجر</h2>
+        <p class="section-subtitle">خدمة إطارات احترافية وموثوقة في جاكسون</p>
+        <div class="gallery-grid">
+            <a href="#" class="gallery-item">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect fill='%23d1d5db' width='400' height='250'/><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-size='16' fill='%236b7280'>صورة المتجر</text></svg>" alt="Billy Tire Shop 2 في جاكسون ألاباما">
+            </a>
+            <a href="#" class="gallery-item">
+                <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 250'><rect fill='%23c7cbd1' width='400' height='250'/><text x='50%' y='50%' text-anchor='middle' dy='.3em' font-size='16' fill='%236b7280'>صورة الإطارات</text></svg>" alt="Billy Tire Shop 2 في جاكسون ألاباما">
+            </a>
         </div>
     </section>
 
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-        <div class="lightbox-content">
-            <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-            <img src="" id="lightbox-image" class="lightbox-image" alt="Billy Tire Shop 2 tire and auto repair shop in Jackson, Alabama.">
-        </div>
-    </div>
-
-    <!-- Reviews Section -->
-    <section class="reviews-section" id="reviews">
-        <div class="reviews-container">
-            <h2 class="section-title">Customer Reviews</h2>
-            <div class="reviews-grid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Great place if you are looking for a tire! They work very fast and efficiently. Will not be disappointed."</p>
-                    <div class="review-author">— Patricia Washington</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Traveling through town with 2 flat tires. Found the shop and the gentleman who was there fixed both tires in a matter of minutes. He was very friendly, quick and polite. Highly recommend Billy Tire Shop 2 for anyone needing tire service."</p>
-                    <div class="review-author">— S Garrett</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Great service and lowest price you'll get. 5/5 for me."</p>
-                    <div class="review-author">— Verified Customer</div>
-                </div>
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <p class="review-text">"Great Deals and Great people!"</p>
-                    <div class="review-author">— Satisfied Customer</div>
-                </div>
+    <!-- Reviews -->
+    <section id="reviews">
+        <h2 class="section-title">تقييمات العملاء</h2>
+        <p class="section-subtitle">ما يقول العملاء الراضون عنا</p>
+        <div class="reviews-grid">
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"مكان رائع للبحث عن إطارات! يعملون بسرعة وكفاءة. لن تشعر بخيبة أمل."</p>
+                <p class="review-author">— باتريشيا واشنطن</p>
             </div>
-            <a href="https://maps.google.com/maps?q=Billy+Tire+Shop+2,+Jackson,+AL" target="_blank" class="read-more-btn">Read More Reviews</a>
-        </div>
-    </section>
-
-    <!-- Hours Section -->
-    <section class="hours-section">
-        <div class="hours-container">
-            <h2 class="section-title">Business Hours</h2>
-            <div class="hours-grid">
-                <div class="hours-column">
-                    <h3>Regular Hours</h3>
-                    <ul>
-                        <li>Monday–Saturday: 7:00 AM – 6:00 PM</li>
-                        <li>Sunday: 9:00 AM – 4:00 PM</li>
-                    </ul>
-                </div>
-                <div class="hours-column">
-                    <h3>Drive-Through Hours</h3>
-                    <ul>
-                        <li>Monday–Saturday: 7:00 AM – 5:00 PM</li>
-                        <li>Sunday: 9:00 AM – 3:00 PM</li>
-                    </ul>
-                </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"كنت عابراً مع إطارين مثقوبين. وجدت المتجر والشاب هناك أصلحهما في دقائق. كان ودياً وسريعاً ومهذباً. أنصح الجميع بالتوجه إليهم."</p>
+                <p class="review-author">— إس جاريت</p>
             </div>
-            <div class="hours-note">
-                <strong>📞 Note:</strong> Hours may change. Please call ahead at +1 251-262-1083 to confirm availability.
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"خدمة رائعة وأسعار منخفضة جداً. خمس نجوم من عندي."</p>
+                <p class="review-author">— عميل راضي</p>
+            </div>
+            <div class="review-card">
+                <div class="stars">★★★★★</div>
+                <p class="review-text">"عروض رائعة وناس طيبين!"</p>
+                <p class="review-author">— عميل ساتيسفايد</p>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Contact Information</h3>
-                <h4>Billy Tire Shop 2</h4>
-                <p>
-                    4055 N College Ave<br>
-                    Jackson, AL 36545<br>
-                    United States
-                </p>
-                <p>
-                    <strong>Phone:</strong> <a href="tel:+12512621083">+1 251-262-1083</a>
-                </p>
-                <div class="contact-buttons">
-                    <a href="tel:+12512621083" class="btn-primary">Click to Call</a>
-                    <a href="https://maps.google.com/maps?q=4055+N+College+Ave,+Jackson,+AL+36545" target="_blank" class="btn-secondary">Get Directions</a>
-                </div>
-                <div class="contact-note">
-                    <strong>💡 Tip:</strong> For the fastest assistance, please call us directly at +1 251-262-1083.
-                </div>
+    <!-- Hours -->
+    <section>
+        <h2 class="section-title">ساعات العمل</h2>
+        <div class="hours-grid">
+            <div class="hours-column">
+                <h3>الساعات العادية</h3>
+                <ul>
+                    <li>الاثنين–السبت: 7:00 ص – 6:00 م</li>
+                    <li>الأحد: 9:00 ص – 4:00 م</li>
+                </ul>
             </div>
-            <div>
-                <form class="contact-form" onsubmit="handleContactForm(event)">
-                    <div>
-                        <label for="name">Name *</label>
-                        <input type="text" id="name" name="name" required>
+            <div class="hours-column">
+                <h3>ساعات المرور السريع</h3>
+                <ul>
+                    <li>الاثنين–السبت: 7:00 ص – 5:00 م</li>
+                    <li>الأحد: 9:00 ص – 3:00 م</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact" id="contact">
+        <div class="contact-wrapper">
+            <h2 style="color: white; margin-bottom: 1rem;">اتصل بنا</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Billy Tire Shop 2</h3>
+                    <p>4055 N College Ave</p>
+                    <p>Jackson, AL 36545</p>
+                    <p>الولايات المتحدة</p>
+                    <p style="margin-top: 1.5rem;"><strong>الهاتف:</strong> <a href="tel:+12512621083">+1 251-262-1083</a></p>
+                    <div class="contact-buttons">
+                        <a href="tel:+12512621083" class="btn btn-primary">اتصل الآن</a>
+                        <a href="https://maps.google.com/maps?q=4055+N+College+Ave,+Jackson,+AL+36545" target="_blank" class="btn btn-secondary">اتجاهات</a>
                     </div>
-                    <div>
-                        <label for="phone">Phone *</label>
-                        <input type="tel" id="phone" name="phone" required>
+                </div>
+                <form class="contact-form" onsubmit="handleSubmit(event)">
+                    <div class="form-group">
+                        <label>الاسم *</label>
+                        <input type="text" required>
                     </div>
-                    <div>
-                        <label for="vehicle">Vehicle Information</label>
-                        <input type="text" id="vehicle" name="vehicle" placeholder="Year, Make, Model">
+                    <div class="form-group">
+                        <label>الهاتف *</label>
+                        <input type="tel" required>
                     </div>
-                    <div>
-                        <label for="service">Service Needed *</label>
-                        <input type="text" id="service" name="service" placeholder="Tire repair, replacement, etc." required>
+                    <div class="form-group">
+                        <label>نوع الخدمة *</label>
+                        <input type="text" placeholder="إصلاح إطار، استبدال، إلخ" required>
                     </div>
-                    <div>
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" placeholder="Tell us more about your needs..."></textarea>
+                    <div class="form-group">
+                        <label>الرسالة</label>
+                        <textarea placeholder="أخبرنا بمزيد من التفاصيل..."></textarea>
                     </div>
-                    <button type="submit">Send Inquiry</button>
+                    <div class="form-group">
+                        <button type="submit">إرسال الاستفسار</button>
+                    </div>
                 </form>
             </div>
         </div>
@@ -1254,104 +1019,49 @@
 
     <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-info">
+        <div class="footer-wrapper">
+            <div class="footer-grid">
                 <div class="footer-section">
                     <h4>Billy Tire Shop 2</h4>
-                    <p>4055 N College Ave<br>Jackson, AL 36545<br>United States</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#reviews">Reviews</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li>4055 N College Ave</li>
+                        <li>Jackson, AL 36545</li>
+                        <li><a href="tel:+12512621083">+1 251-262-1083</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Hours</h4>
+                    <h4>الروابط السريعة</h4>
                     <ul>
-                        <li>Mon-Sat: 7:00 AM – 6:00 PM</li>
-                        <li>Sunday: 9:00 AM – 4:00 PM</li>
-                        <li><a href="tel:+12512621083">Call: +1 251-262-1083</a></li>
+                        <li><a href="#services">الخدمات</a></li>
+                        <li><a href="#about">معلومات</a></li>
+                        <li><a href="#reviews">التقييمات</a></li>
+                        <li><a href="#contact">اتصل</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h4>Connect With Us</h4>
-                    <div class="social-links">
-                        <a href="https://facebook.com" class="social-link" title="Facebook">f</a>
-                        <a href="https://instagram.com" class="social-link" title="Instagram">📷</a>
-                        <a href="https://google.com/maps" class="social-link" title="Google Maps">G</a>
-                    </div>
+                    <h4>ساعات العمل</h4>
+                    <ul>
+                        <li>الاثنين–السبت: 7:00 ص–6:00 م</li>
+                        <li>الأحد: 9:00 ص–4:00 م</li>
+                        <li><a href="tel:+12512621083">اتصل للتأكيد</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Billy Tire Shop 2. All rights reserved. | Professional Tire & Auto Repair Services in Jackson, Alabama</p>
+                <p>&copy; 2026 Billy Tire Shop 2. جميع الحقوق محفوظة | خدمات إطارات وإصلاح سيارات احترافية</p>
             </div>
         </div>
     </footer>
 
-    <!-- Sticky Call Button (Mobile) -->
-    <a href="tel:+12512621083" class="sticky-call-btn" title="Call Now">📞</a>
+    <!-- Sticky Call Button -->
+    <a href="tel:+12512621083" class="sticky-call" title="اتصل الآن">📞</a>
 
     <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('active');
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert('شكراً لاستفسارك! يرجى الاتصال بنا مباشرة للخدمة الأسرع: +1 251-262-1083');
+            e.target.reset();
         }
-
-        // Close menu when link is clicked
-        document.querySelectorAll('#navbar a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navbar').classList.remove('active');
-            });
-        });
-
-        // Lightbox Functions
-        function openLightbox(img) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImage = document.getElementById('lightbox-image');
-            lightboxImage.src = img.src;
-            lightbox.classList.add('active');
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.classList.remove('active');
-        }
-
-        // Close lightbox when clicking outside image
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target.id === 'lightbox') {
-                closeLightbox();
-            }
-        });
-
-        // Contact Form Handler
-        function handleContactForm(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const phone = document.getElementById('phone').value;
-            const message = `Hi, my name is ${name}. I'm interested in your services. Please call me at ${phone}.`;
-            const whatsappUrl = `https://wa.me/12512621083?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-            // Reset form
-            event.target.reset();
-            alert('Thank you! We recommend calling us directly for faster service.');
-        }
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
     </script>
 </body>
 </html>
