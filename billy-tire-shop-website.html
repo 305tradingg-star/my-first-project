@@ -208,32 +208,48 @@
 
         /* Hero */
         .hero {
-            max-width: 1400px;
-            margin: 5rem auto 0;
-            padding: 5rem 2rem;
+            max-width: 100%;
+            margin: 0;
+            padding: 6rem 2rem;
             text-align: center;
-            background: linear-gradient(135deg, var(--gray-900) 0%, var(--gray-800) 100%);
-            border-radius: 8px;
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), url('hero-bg.png') center/cover no-repeat;
+            background-attachment: fixed;
             position: relative;
             overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -200px;
-            right: -200px;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 40%, rgba(220, 38, 38, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-inner {
             position: relative;
-            z-index: 1;
+            z-index: 2;
             max-width: 800px;
             margin: 0 auto;
+            animation: fadeInUp 0.9s ease 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .hero h1 {
