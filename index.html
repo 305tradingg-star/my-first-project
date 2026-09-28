@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Small Realtor | Tempe, Phoenix & Scottsdale Real Estate</title>
+    <meta name="description" content="Work with David Small, a trusted Arizona Realtor helping buyers, sellers, inherited-property owners, and probate clients throughout Tempe, Phoenix, Scottsdale, and the Greater Phoenix Area.">
+    <meta name="keywords" content="Tempe real estate agent, Phoenix Realtor, Scottsdale Realtor, Arizona real estate agent, sell inherited house, probate real estate agent">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #b8956a #f5f5f5;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f5f5f5;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #b8956a;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #8b6f47;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(15, 30, 60, 0.85) 0%, rgba(20, 40, 80, 0.85) 100%);
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(184, 149, 106, 0.15);
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, #0f1e3c 0%, #142850 100%);
+            transition: all 0.3s ease;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #142850 0%, #1a3456 100%);
+            box-shadow: 0 8px 20px rgba(15, 30, 60, 0.3);
+        }
+        .btn-secondary {
+            background: #b8956a;
+            transition: all 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background: #a0835f;
+            box-shadow: 0 8px 20px rgba(184, 149, 106, 0.3);
+        }
+        .review-badge {
+            background: linear-gradient(135deg, #b8956a 0%, #c9a574 100%);
+        }
+        .sticky-call-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+            display: none;
+        }
+        @media (max-width: 768px) {
+            .sticky-call-btn {
+                display: flex;
+            }
+        }
+        .image-hover {
+            transition: transform 0.3s ease;
+        }
+        .image-hover:hover {
+            transform: scale(1.02);
+        }
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #b8956a;
+            border-radius: 2px;
+        }
+        form {
+            animation: slideUp 0.5s ease-out;
+        }
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .input-field {
+            transition: all 0.3s ease;
+            border: 2px solid #e5e7eb;
+        }
+        .input-field:focus {
+            border-color: #b8956a;
+            box-shadow: 0 0 0 3px rgba(184, 149, 106, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- Sticky Call Now Button (Mobile) -->
+    <div class="sticky-call-btn">
+        <a href="tel:+16028826257" class="btn-primary text-white font-bold py-3 px-6 rounded-full shadow-lg flex items-center gap-2">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.418 1.291 1.207 2.532 2.202 3.527a8.991 8.991 0 003.527 2.202l.773-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a2 2 0 01-2 2h-2.5A8.5 8.5 0 013.5 2.5H2z"></path>
+            </svg>
+            Call Now
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-gray-800">
+                        <span class="text-blue-900">David</span><span class="text-amber-700"> Small</span>
+                    </span>
+                    <span class="ml-3 text-sm text-gray-600">Realtor</span>
+                </div>
+                <div class="hidden md:flex gap-8 items-center">
+                    <a href="#about" class="text-gray-700 hover:text-blue-900 font-medium transition">About</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-900 font-medium transition">Services</a>
+                    <a href="#probate" class="text-gray-700 hover:text-blue-900 font-medium transition">Probate</a>
+                    <a href="#reviews" class="text-gray-700 hover:text-blue-900 font-medium transition">Reviews</a>
+                    <a href="#contact" class="btn-primary text-white px-6 py-2 rounded-lg font-medium">Contact</a>
+                </div>
+                <button id="mobileMenuBtn" class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-96 flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1570129477492-45a003537e1f?w=1920&h=1080&fit=crop" alt="Modern Arizona home exterior at sunset" class="w-full h-full object-cover">
+            <div class="absolute inset-0 hero-gradient"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+                Your Trusted Arizona Real Estate Advisor
+            </h1>
+            <p class="text-xl sm:text-2xl text-gray-100 mb-8 leading-relaxed">
+                Helping buyers and sellers navigate every step of the real estate process with confidence.
+            </p>
+
+            <!-- Rating Badge -->
+            <div class="review-badge text-white font-bold py-3 px-6 rounded-full inline-block mb-10 shadow-lg">
+                ⭐ 5.0-Star Rated Realtor | 28 Google Reviews
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
+                <a href="#contact" class="btn-primary text-white font-bold py-3 px-8 rounded-lg hover:shadow-xl transition">
+                    Sell Your Home
+                </a>
+                <a href="#services" class="btn-primary text-white font-bold py-3 px-8 rounded-lg hover:shadow-xl transition">
+                    Find Your Home
+                </a>
+                <a href="#contact" class="btn-secondary text-white font-bold py-3 px-8 rounded-lg hover:shadow-xl transition">
+                    Schedule a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About David Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="section-title text-4xl font-bold text-gray-900 mb-8">About David</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        David Small is a knowledgeable and dedicated Arizona Realtor committed to helping clients buy and sell properties with confidence. With deep roots in the Tempe, Phoenix, Scottsdale, and Greater Phoenix Area markets, David brings professional expertise and genuine care to every transaction.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Known for his clear and consistent communication, David specializes in understanding each client's unique needs—whether you're a first-time homebuyer, a seasoned seller, managing an inherited property, or navigating probate. His negotiation skills and personalized service have earned him a 5.0-star rating from 28 Google reviews.
+                    </p>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        David doesn't just facilitate transactions; he builds lasting relationships by providing professional guidance from start to finish, coordinating with contractors, service providers, and title companies to ensure a smooth, stress-free process.
+                    </p>
+                    <a href="#contact" class="btn-primary text-white font-bold py-3 px-8 rounded-lg inline-block hover:shadow-lg transition">
+                        Learn More About David
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1560264357-8d9766d64b4f?w=600&h=600&fit=crop" alt="Professional consultation with David Small" class="w-full h-96 object-cover rounded-lg shadow-lg image-hover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title inline-block text-4xl font-bold text-gray-900">Our Services</h2>
+                <p class="text-xl text-gray-600 mt-8">Comprehensive real estate solutions tailored to your needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Buying a Home -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">🏡</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Buying a Home</h3>
+                    <p class="text-gray-700 mb-6">Expert guidance through the home buying process, from finding the right property to closing day. Negotiating favorable terms and securing your dream home.</p>
+                    <a href="#contact" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Selling a Home -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">📈</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Selling a Home</h3>
+                    <p class="text-gray-700 mb-6">Market your home effectively with professional staging, photography, and marketing strategies. Maximize value and achieve competitive offers in any market.</p>
+                    <a href="#contact" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Inherited Property Sales -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">🔑</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Inherited Property Sales</h3>
+                    <p class="text-gray-700 mb-6">Compassionate support for selling inherited properties. Handle coordination with family, prepare the property, and navigate the sale process with ease.</p>
+                    <a href="#probate" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Probate Real Estate -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">⚖️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Probate Real Estate</h3>
+                    <p class="text-gray-700 mb-6">Professional assistance with probate property transactions. Work with title companies and attorneys while managing the sale seamlessly.</p>
+                    <a href="#probate" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Out-of-State Sellers -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">✈️</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Out-of-State Sellers</h3>
+                    <p class="text-gray-700 mb-6">Remote property sales made easy. Complete property management, contractor coordination, and regular updates from thousands of miles away.</p>
+                    <a href="#contact" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Home Valuations -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Home Valuations</h3>
+                    <p class="text-gray-700 mb-6">Accurate market analysis and home valuations. Know your property's true market value with detailed comparable property research.</p>
+                    <a href="#contact" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Relocation Services -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">🚚</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Relocation Services</h3>
+                    <p class="text-gray-700 mb-6">Support for relocating to Arizona. Explore neighborhoods, find the right home, and make your transition smooth and stress-free.</p>
+                    <a href="#contact" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+
+                <!-- Contract & Negotiation -->
+                <div class="service-card bg-white border-2 border-gray-100 p-8 rounded-lg">
+                    <div class="text-4xl mb-4">📝</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Contract & Negotiation</h3>
+                    <p class="text-gray-700 mb-6">Expert negotiation and contract support. Protect your interests with detailed contract review and skilled negotiation strategies.</p>
+                    <a href="#contact" class="text-amber-700 font-semibold hover:text-amber-800 transition inline-flex items-center gap-2">
+                        Learn More <span>→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Work With David Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-12 text-center">Why Work With David?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Clear Communication</h3>
+                        <p class="text-gray-200 mt-2">Consistent updates throughout every transaction</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Professional Service</h3>
+                        <p class="text-gray-200 mt-2">Knowledgeable guidance from start to finish</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Inherited Property Expertise</h3>
+                        <p class="text-gray-200 mt-2">Specialized experience with inherited properties</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Probate Support</h3>
+                        <p class="text-gray-200 mt-2">Professional guidance through probate transactions</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Out-of-State Support</h3>
+                        <p class="text-gray-200 mt-2">Full-service remote property management</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Network Access</h3>
+                        <p class="text-gray-200 mt-2">Connections with contractors and service providers</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Property Preparation</h3>
+                        <p class="text-gray-200 mt-2">Expert staging and preparation strategies</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Negotiation Skills</h3>
+                        <p class="text-gray-200 mt-2">Strong advocacy for favorable contract terms</p>
+                    </div>
+                </div>
+                <div class="flex items-start gap-4">
+                    <div class="flex-shrink-0">
+                        <div class="flex items-center justify-center h-10 w-10 rounded-md bg-amber-600">
+                            ✓
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-semibold">Market Expertise</h3>
+                        <p class="text-gray-200 mt-2">Deep knowledge of Tempe, Phoenix, Scottsdale, and East Valley</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inherited & Probate Section -->
+    <section id="probate" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="hidden md:block">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=600&fit=crop" alt="Professional consultation and paperwork review" class="w-full h-96 object-cover rounded-lg shadow-lg image-hover">
+                </div>
+                <div>
+                    <h2 class="section-title text-4xl font-bold text-gray-900 mb-8">Selling an Inherited or Probate Property?</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        Managing an inherited property or navigating probate can be overwhelming, especially if you're managing the sale from out of state. David specializes in helping families like yours through this sensitive process.
+                    </p>
+
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6 mt-10">How David Can Help:</h3>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-700 font-bold mt-1">✓</span>
+                            <span class="text-gray-700"><strong>Understanding the Process:</strong> Clear explanation of each step from listing to closing</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-700 font-bold mt-1">✓</span>
+                            <span class="text-gray-700"><strong>Coordinating with Family:</strong> Managing communication among heirs and beneficiaries</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-700 font-bold mt-1">✓</span>
+                            <span class="text-gray-700"><strong>Working with Professionals:</strong> Liaison with title companies, attorneys, and other professionals</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-700 font-bold mt-1">✓</span>
+                            <span class="text-gray-700"><strong>Property Preparation:</strong> Coordinating necessary repairs and home staging</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-700 font-bold mt-1">✓</span>
+                            <span class="text-gray-700"><strong>Contractor Coordination:</strong> Managing repairs and maintenance work</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-700 font-bold mt-1">✓</span>
+                            <span class="text-gray-700"><strong>Marketing & Negotiation:</strong> Professional marketing and skilled buyer negotiation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="text-amber-700 font-bold mt-1">✓</span>
+                            <span class="text-gray-700"><strong>Remote Management:</strong> Full-service support even if you live out of state</span>
+                        </li>
+                    </ul>
+
+                    <a href="#contact" class="btn-primary text-white font-bold py-3 px-8 rounded-lg inline-block hover:shadow-lg transition">
+                        Get Probate Property Help
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title inline-block text-4xl font-bold text-gray-900">What Clients Say</h2>
+                <div class="review-badge text-white font-bold py-3 px-8 rounded-full inline-block mt-8 shadow-lg">
+                    ⭐ 5.0 Rating | 28 Google Reviews
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <!-- Review 1 -->
+                <div class="bg-gray-50 border-2 border-gray-100 p-8 rounded-lg hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <span class="text-amber-600">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "My experience with David Small Real Estate exceeded all of my expectations. He was able to help me sell my auntie's house without any hiccups. He kept me apprised of all steps and took care of things I never expected."
+                    </p>
+                    <p class="font-semibold text-gray-900">Connie Hill</p>
+                    <p class="text-sm text-gray-600">Inherited Property Sale</p>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-gray-50 border-2 border-gray-100 p-8 rounded-lg hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <span class="text-amber-600">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "David was invaluable in selling the property I inherited from my parents. I was over 1000 miles away, so his help was key. He made the process very easy and was always available to answer questions."
+                    </p>
+                    <p class="font-semibold text-gray-900">Kimberly Novosel</p>
+                    <p class="text-sm text-gray-600">Out-of-State Inherited Property</p>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-gray-50 border-2 border-gray-100 p-8 rounded-lg hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <span class="text-amber-600">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "David did a fantastic job assisting with selling my parents' home while living across the country. He facilitated all contractors needed to prepare the home for sale and made a very stressful time very easy."
+                    </p>
+                    <p class="font-semibold text-gray-900">Rick Conner</p>
+                    <p class="text-sm text-gray-600">Probate Real Estate</p>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="bg-gray-50 border-2 border-gray-100 p-8 rounded-lg hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <span class="text-amber-600">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "David helped me sell my father's houses that me and my siblings inherited. He did a great job and was able to help us navigate the probate process with getting everything done with the title company and negotiating for us with the buyer."
+                    </p>
+                    <p class="font-semibold text-gray-900">Israel Duarte</p>
+                    <p class="text-sm text-gray-600">Multi-Property Probate Sale</p>
+                </div>
+
+                <!-- Review 5 -->
+                <div class="bg-gray-50 border-2 border-gray-100 p-8 rounded-lg hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <span class="text-amber-600">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "David was professional and his expertise was impressive. He was able to connect me with a lender that had great products for me. I was able to get into a home easily and stress-free. David was the one calling me with updates!"
+                    </p>
+                    <p class="font-semibold text-gray-900">Gabe Catalan</p>
+                    <p class="text-sm text-gray-600">Home Buyer</p>
+                </div>
+
+                <!-- Review 6 -->
+                <div class="bg-gray-50 border-2 border-gray-100 p-8 rounded-lg hover:shadow-lg transition">
+                    <div class="flex items-center mb-4">
+                        <span class="text-amber-600">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p class="text-gray-700 mb-4 italic">
+                        "David is a very knowledgeable realtor who helped me sell my house above list price in a tough market. Will continue to use him in the future!"
+                    </p>
+                    <p class="font-semibold text-gray-900">Levi Sholing</p>
+                    <p class="text-sm text-gray-600">Home Seller</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <a href="https://www.google.com/search?q=David+Small+Real+Estate+Arizona" target="_blank" rel="noopener noreferrer" class="btn-primary text-white font-bold py-3 px-8 rounded-lg hover:shadow-lg transition inline-block">
+                    Read All 28 Reviews
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section class="py-20 bg-blue-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold mb-12 text-center">Service Areas</h2>
+            <p class="text-center text-gray-200 text-lg mb-12">Serving Tempe, Phoenix, Scottsdale, and the Greater Phoenix Area</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">Tempe</h3>
+                    <p class="text-gray-200">Home Office Area</p>
+                </div>
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">Phoenix</h3>
+                    <p class="text-gray-200">Greater Metro Area</p>
+                </div>
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">Scottsdale</h3>
+                    <p class="text-gray-200">Northern Metro Area</p>
+                </div>
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">Mesa</h3>
+                    <p class="text-gray-200">East Valley Market</p>
+                </div>
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">Chandler</h3>
+                    <p class="text-gray-200">South Valley Market</p>
+                </div>
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">Gilbert</h3>
+                    <p class="text-gray-200">Southeast Valley Market</p>
+                </div>
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">East Valley</h3>
+                    <p class="text-gray-200">Regional Market</p>
+                </div>
+                <div class="bg-blue-800 border-2 border-amber-600 p-8 rounded-lg text-center hover:shadow-lg transition">
+                    <h3 class="text-2xl font-bold mb-2">Greater Phoenix</h3>
+                    <p class="text-gray-200">Entire Region</p>
+                </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold mb-6 text-center">Find David's Office</h3>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.8481537156706!2d-111.9366!3d33.4156!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b07b4e5b5b5b5%3A0x5b5b5b5b5b5b5b5b!2s670%20W%20Fremont%20Dr%2C%20Tempe%2C%20AZ%2085282!5e0!3m2!1sen!2sus!4v1234567890" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="section-title inline-block text-4xl font-bold text-gray-900">Ready to Get Started?</h2>
+                <p class="text-xl text-gray-600 mt-6">Request a consultation or contact David directly</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Phone -->
+                <div class="bg-white border-2 border-gray-100 p-8 rounded-lg text-center">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Call David</h3>
+                    <a href="tel:+16028826257" class="text-2xl font-bold text-blue-900 hover:text-amber-700 transition">
+                        +1 602-882-6257
+                    </a>
+                    <p class="text-gray-600 mt-2">Available Monday-Sunday, 8 AM - 7 PM</p>
+                </div>
+
+                <!-- Address -->
+                <div class="bg-white border-2 border-gray-100 p-8 rounded-lg text-center">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Office Location</h3>
+                    <p class="text-gray-700">
+                        670 W Fremont Dr<br>
+                        Tempe, AZ 85282
+                    </p>
+                </div>
+
+                <!-- Hours -->
+                <div class="bg-white border-2 border-gray-100 p-8 rounded-lg text-center">
+                    <div class="text-4xl mb-4">🕐</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Business Hours</h3>
+                    <p class="text-gray-700">
+                        Monday - Sunday<br>
+                        8:00 AM - 7:00 PM
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="bg-white border-2 border-gray-200 p-10 rounded-lg shadow-lg">
+                <h3 class="text-2xl font-bold text-gray-900 mb-8">Request a Consultation</h3>
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                            <input type="text" name="fullName" required class="input-field w-full px-4 py-3 rounded-lg outline-none" placeholder="Your full name">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                            <input type="email" name="email" required class="input-field w-full px-4 py-3 rounded-lg outline-none" placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                            <input type="tel" name="phone" required class="input-field w-full px-4 py-3 rounded-lg outline-none" placeholder="+1 (602) 000-0000">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-semibold mb-2">Type of Service</label>
+                            <select name="serviceType" required class="input-field w-full px-4 py-3 rounded-lg outline-none bg-white">
+                                <option value="">Select a service</option>
+                                <option value="buying">Buying a Home</option>
+                                <option value="selling">Selling a Home</option>
+                                <option value="inherited">Inherited Property Sales</option>
+                                <option value="probate">Probate Real Estate</option>
+                                <option value="outofstate">Out-of-State Sellers</option>
+                                <option value="valuation">Home Valuations</option>
+                                <option value="relocation">Relocation Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Property Address or City</label>
+                        <input type="text" name="propertyAddress" required class="input-field w-full px-4 py-3 rounded-lg outline-none" placeholder="e.g., Tempe, AZ or 123 Main St, Phoenix, AZ">
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-semibold mb-2">Message</label>
+                        <textarea name="message" rows="6" class="input-field w-full px-4 py-3 rounded-lg outline-none" placeholder="Tell David about your real estate needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary text-white font-bold py-3 px-8 rounded-lg w-full hover:shadow-lg transition">
+                        Request a Consultation
+                    </button>
+                    <p class="text-sm text-gray-600 text-center">We typically respond within 24 hours.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- About -->
+                <div>
+                    <h3 class="text-xl font-bold mb-4">
+                        <span class="text-amber-600">David Small</span> – Realtor
+                    </h3>
+                    <p class="text-gray-400">Your trusted Arizona real estate advisor for buying, selling, and probate properties.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#about" class="hover:text-amber-600 transition">About David</a></li>
+                        <li><a href="#services" class="hover:text-amber-600 transition">Services</a></li>
+                        <li><a href="#reviews" class="hover:text-amber-600 transition">Reviews</a></li>
+                        <li><a href="#contact" class="hover:text-amber-600 transition">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-amber-600 transition">Buying a Home</a></li>
+                        <li><a href="#services" class="hover:text-amber-600 transition">Selling a Home</a></li>
+                        <li><a href="#probate" class="hover:text-amber-600 transition">Probate Services</a></li>
+                        <li><a href="#services" class="hover:text-amber-600 transition">Relocation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact Info</h4>
+                    <p class="text-gray-400 mb-2">
+                        <strong>Phone:</strong> <a href="tel:+16028826257" class="hover:text-amber-600 transition">+1 602-882-6257</a>
+                    </p>
+                    <p class="text-gray-400 mb-4">
+                        <strong>Address:</strong> 670 W Fremont Dr, Tempe, AZ 85282
+                    </p>
+                    <!-- Social Media Placeholders -->
+                    <div class="flex gap-4 mt-4">
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-amber-600 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2s9 5 20 5a9.5 9.5 0 00-9-5.5c4.75 2.25 7-7 7-7"/></svg>
+                        </a>
+                        <a href="https://www.google.com/search?q=David+Small+Real+Estate+Arizona" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-amber-600 transition">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.48 15.684c-2.482 0-4.5-2.018-4.5-4.5s2.018-4.5 4.5-4.5c1.204 0 2.247.422 3.083 1.228l2.038-1.98C15.609 4.806 13.946 4 12.48 4 8.694 4 5.5 7.194 5.5 11.04s3.194 7.04 6.98 7.04c4.012 0 6.847-2.805 6.847-6.755 0-.502-.054-.984-.135-1.441H12.48v2.08h4.032c-.19 1.149-.953 2.128-2.032 2.78v1.98h3.286c1.916-1.765 3.02-4.368 3.02-7.44z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 pt-8">
+                <p class="text-center text-gray-400">
+                    &copy; 2024 David Small Realtor. All rights reserved. |
+                    <a href="#" class="hover:text-amber-600 transition">Privacy Policy</a> |
+                    <a href="#" class="hover:text-amber-600 transition">Terms of Service</a>
+                </p>
+                <p class="text-center text-gray-500 text-sm mt-4">
+                    License Information: [License/Credentials Placeholder]
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const formData = {
+                fullName: document.querySelector('input[name="fullName"]').value,
+                email: document.querySelector('input[name="email"]').value,
+                phone: document.querySelector('input[name="phone"]').value,
+                serviceType: document.querySelector('select[name="serviceType"]').value,
+                propertyAddress: document.querySelector('input[name="propertyAddress"]').value,
+                message: document.querySelector('textarea[name="message"]').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Log form data (in production, this would send to a server)
+            console.log('Form submitted:', formData);
+
+            // Show success message
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '✓ Message Sent! David will contact you soon.';
+            submitBtn.disabled = true;
+            submitBtn.classList.remove('hover:shadow-lg');
+
+            // Reset form
+            contactForm.reset();
+
+            // Restore button after 3 seconds
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 3000);
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                }
+            });
+        });
+
+        // Add active state to navigation
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-blue-900', 'font-bold');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('text-blue-900', 'font-bold');
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.service-card, .flex.items-start.gap-4').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
