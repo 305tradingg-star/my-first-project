@@ -1285,12 +1285,21 @@
     }
 
     function handleFormSubmit(e) {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const phone = document.getElementById('phone').value;
-        alert(`Thank you, ${name}!\n\nDavid will contact you at ${phone}.\n\nFor immediate help: +1 602-882-6257`);
-        e.target.reset();
-    }
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const property = document.getElementById('property').value;
+            const message = document.getElementById('message').value;
+
+            const emailBody = `Name: ${name}%0DEmail: ${email}%0DPhone: ${phone}%0DService: ${service}%0DProperty: ${property}%0DMessage: ${message}`;
+            const mailtoLink = `mailto:Davidsmallre@gmail.com?subject=New Consultation Request from ${name}&body=${emailBody}`;
+
+            window.location.href = mailtoLink;
+            alert(`Thank you, ${name}!\n\nYour consultation request has been sent to David.\n\nFor immediate help: +1 602-882-6257`);
+            e.target.reset();
+        }
 </script>
 
     <script>
