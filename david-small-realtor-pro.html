@@ -572,6 +572,69 @@
             font-size: 0.95rem;
         }
 
+        /* ==================== GALLERY ==================== */
+        #gallery {
+            background: var(--light-gray);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            aspect-ratio: 1;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(0, 61, 153, 0.1);
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 32px rgba(0, 61, 153, 0.2);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 61, 153, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay p {
+            color: var(--white);
+            font-size: 1.3rem;
+            font-weight: 600;
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+        }
+
         /* ==================== SERVICE AREAS ==================== */
         #areas {
             background: var(--white);
@@ -843,6 +906,7 @@
             <a href="#about">About</a>
             <a href="#services">Services</a>
             <a href="#probate">Probate</a>
+            <a href="#gallery">Gallery</a>
             <a href="#reviews">Reviews</a>
             <a href="#areas">Service Areas</a>
             <a href="#contact" class="cta-header">Contact Now</a>
@@ -868,7 +932,7 @@
     </div>
 
     <div class="hero-image">
-        <img id="hero-img" src="" alt="Premium Arizona Home" onerror="this.parentElement.textContent='Property Image Placeholder'">
+        <img id="hero-img" src="img-hero.jpg" alt="Premium Arizona Home Exterior" onerror="this.parentElement.textContent='Property Image Placeholder'">
     </div>
 </section>
 
@@ -896,7 +960,7 @@
         </div>
 
         <div class="about-image">
-            <img id="about-img" src="" alt="David Small Professional Portrait" onerror="this.textContent='Professional Photo Placeholder'">
+            <img id="about-img" src="img-about.jpg" alt="Arizona Luxury Home" onerror="this.textContent='Professional Photo Placeholder'">
         </div>
     </div>
 </section>
@@ -1046,7 +1110,7 @@
         </div>
 
         <div class="probate-image">
-            <img id="probate-img" src="" alt="Probate Property Consultation" onerror="this.textContent='Consultation Photo Placeholder'">
+            <img id="probate-img" src="img-probate.jpg" alt="Real Estate Consultation" onerror="this.textContent='Consultation Photo Placeholder'">
         </div>
     </div>
 </section>
@@ -1108,6 +1172,58 @@
             <div class="review-stars">★★★★★</div>
             <p class="review-text">"David is the best real estate agent I have ever dealt with. He values his clients professionally and helpfully. He manages to answer questions with utmost knowledge."</p>
             <p class="review-author">— Rudy Molina</p>
+        </div>
+    </div>
+</section>
+
+<!-- Gallery Section -->
+<section id="gallery">
+    <div class="section-header">
+        <h2 class="section-title">Featured Properties & Interiors</h2>
+        <p class="section-subtitle">Showcase of Beautiful Arizona Homes</p>
+    </div>
+
+    <div class="gallery-grid">
+        <div class="gallery-item">
+            <img src="img-gallery-1.jpg" alt="Luxury Living Room Interior">
+            <div class="gallery-overlay">
+                <p>Modern Living Spaces</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img-gallery-2.jpg" alt="Professional Kitchen Design">
+            <div class="gallery-overlay">
+                <p>Gourmet Kitchens</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img-gallery-3.jpg" alt="Elegant Entryway">
+            <div class="gallery-overlay">
+                <p>Grand Entrances</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img-gallery-5.jpg" alt="Arizona Home Exterior">
+            <div class="gallery-overlay">
+                <p>Premium Homes</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img-areas.jpg" alt="Arizona Neighborhood Street">
+            <div class="gallery-overlay">
+                <p>Beautiful Neighborhoods</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="img-gallery-4.jpg" alt="Real Estate Transaction">
+            <div class="gallery-overlay">
+                <p>Trusted Transactions</p>
+            </div>
         </div>
     </div>
 </section>
