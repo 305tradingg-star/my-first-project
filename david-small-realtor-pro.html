@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>David Small | Premium Arizona Real Estate Agent</title>
+    <meta name="description" content="David Small - Award-winning Arizona Realtor specializing in buying, selling, probate, and inherited property sales throughout Tempe, Phoenix, Scottsdale & Greater Phoenix.">
+    <meta name="keywords" content="Arizona real estate agent, Tempe Realtor, Phoenix property sales, Scottsdale real estate, probate property sales, inherited house sales">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #003d99;
+            --light-blue: #0052cc;
+            --sky-blue: #e8f0ff;
+            --white: #ffffff;
+            --dark-text: #1a1a1a;
+            --light-gray: #f8f9fb;
+            --border-gray: #e0e0e0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-text);
+            background: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+
+        /* ==================== HEADER ==================== */
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border-gray);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .header-wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-blue);
+            font-family: 'Playfair Display', serif;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-sub {
+            font-size: 0.75rem;
+            color: var(--light-blue);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--dark-text);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s, border-bottom 0.3s;
+            border-bottom: 2px solid transparent;
+            padding-bottom: 0.25rem;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+            border-bottom-color: var(--primary-blue);
+        }
+
+        .cta-header {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .cta-header:hover {
+            background: var(--light-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 61, 153, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+
+            .header-wrapper {
+                padding: 1rem;
+            }
+
+            .cta-header {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        /* ==================== HERO ==================== */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+            color: var(--primary-blue);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .rating-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: var(--sky-blue);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--light-blue);
+        }
+
+        .rating-badge .stars {
+            color: #ffc107;
+            font-size: 1.3rem;
+        }
+
+        .rating-text {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2.2rem;
+            border: none;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-family: 'Inter', sans-serif;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--light-blue);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 32px rgba(0, 61, 153, 0.25);
+        }
+
+        .btn-secondary {
+            background: var(--sky-blue);
+            color: var(--primary-blue);
+            border: 2px solid var(--light-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--light-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, #d4e3ff 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            color: var(--light-blue);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 61, 153, 0.1);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-image {
+                height: 350px;
+            }
+        }
+
+        /* ==================== SECTIONS ==================== */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+            font-weight: 400;
+        }
+
+        /* ==================== ABOUT SECTION ==================== */
+        #about {
+            background: var(--light-gray);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .about-list {
+            list-style: none;
+        }
+
+        .about-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+
+        .about-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 450px;
+            background: linear-gradient(135deg, var(--sky-blue) 0%, #d4e3ff 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 61, 153, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-blue);
+            font-size: 0.95rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== SERVICES SECTION ==================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            padding: 2.5rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            border-color: var(--light-blue);
+            box-shadow: 0 12px 32px rgba(0, 61, 153, 0.12);
+            transform: translateY(-4px);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--primary-blue);
+        }
+
+        .service-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .service-card .btn {
+            width: 100%;
+        }
+
+        /* ==================== WHY CHOOSE ==================== */
+        #why {
+            background: var(--light-gray);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--light-blue);
+        }
+
+        .benefit-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-blue);
+        }
+
+        .benefit-card p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ==================== PROBATE SECTION ==================== */
+        #probate {
+            background: linear-gradient(135deg, var(--sky-blue) 0%, #e8f0ff 100%);
+        }
+
+        .probate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .probate-content h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .probate-content p {
+            color: #555;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .probate-list {
+            list-style: none;
+        }
+
+        .probate-list li {
+            padding: 0.8rem 0;
+            padding-left: 2rem;
+            position: relative;
+            color: #555;
+        }
+
+        .probate-list li:before {
+            content: "●";
+            position: absolute;
+            left: 0;
+            color: var(--light-blue);
+            font-size: 1rem;
+        }
+
+        .probate-image {
+            width: 100%;
+            height: 450px;
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 61, 153, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-blue);
+            font-size: 0.95rem;
+        }
+
+        .probate-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 1024px) {
+            .probate-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== REVIEWS SECTION ==================== */
+        #reviews {
+            background: var(--light-gray);
+        }
+
+        .reviews-stats {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            margin-bottom: 3rem;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-gray);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-label {
+            color: #666;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-gray);
+            transition: all 0.3s;
+        }
+
+        .review-card:hover {
+            border-color: var(--light-blue);
+            box-shadow: 0 12px 32px rgba(0, 61, 153, 0.1);
+        }
+
+        .review-stars {
+            color: #ffc107;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: var(--primary-blue);
+            font-size: 0.95rem;
+        }
+
+        /* ==================== SERVICE AREAS ==================== */
+        #areas {
+            background: var(--white);
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .area-item {
+            background: var(--light-gray);
+            padding: 2rem;
+            text-align: center;
+            border-radius: 10px;
+            border: 1px solid var(--border-gray);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .area-item:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            border-color: var(--primary-blue);
+            transform: scale(1.05);
+        }
+
+        .area-item h4 {
+            font-size: 1.1rem;
+            color: var(--primary-blue);
+        }
+
+        .area-item:hover h4 {
+            color: var(--white);
+        }
+
+        /* ==================== CONTACT SECTION ==================== */
+        #contact {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+            color: var(--white);
+        }
+
+        #contact .section-title {
+            color: var(--white);
+        }
+
+        #contact .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-block {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-block h4 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .info-block p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .info-block a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .info-block a:hover {
+            text-decoration: underline;
+        }
+
+        /* Form */
+        .contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.6rem;
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid var(--border-gray);
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--light-blue);
+            box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form .btn {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 1024px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ==================== MAP ==================== */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 61, 153, 0.15);
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 3rem 2rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.7rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .footer-section a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* ==================== MOBILE CTA ==================== */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 70px;
+            height: 70px;
+            background: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 8px 24px rgba(0, 61, 153, 0.3);
+            z-index: 999;
+            transition: all 0.3s;
+        }
+
+        .mobile-cta:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 32px rgba(0, 61, 153, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .mobile-cta {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        /* ==================== UTILITIES ==================== */
+        .text-center {
+            text-align: center;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--border-gray);
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="header-wrapper">
+        <div>
+            <div class="logo">David Small</div>
+            <div class="logo-sub">Real Estate Expert</div>
+        </div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#probate">Probate</a>
+            <a href="#reviews">Reviews</a>
+            <a href="#areas">Service Areas</a>
+            <a href="#contact" class="cta-header">Contact Now</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="rating-badge">
+            <div class="stars">★★★★★</div>
+            <div class="rating-text">5.0 Rating • 28 Reviews</div>
+        </div>
+
+        <h1>Arizona's Premier Real Estate Advisor</h1>
+        <p>Trusted by hundreds of families to buy, sell, and manage properties with expertise, integrity, and transparency.</p>
+
+        <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Start Consultation</button>
+            <button class="btn btn-secondary" onclick="scrollToSection('services')">View Services</button>
+        </div>
+    </div>
+
+    <div class="hero-image">
+        <img id="hero-img" src="" alt="Premium Arizona Home" onerror="this.parentElement.textContent='Property Image Placeholder'">
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="section-header">
+        <h2 class="section-title">About David Small</h2>
+        <p class="section-subtitle">A Realtor Dedicated to Your Success</p>
+    </div>
+
+    <div class="about-grid">
+        <div class="about-content">
+            <h3>Expertise You Can Trust</h3>
+            <p>With extensive experience in Arizona real estate, David Small has built a reputation for professional excellence, clear communication, and exceptional results. Whether you're buying, selling, or navigating inherited property sales, David provides expert guidance every step of the way.</p>
+
+            <h3 style="margin-top: 2rem;">Why Choose David:</h3>
+            <ul class="about-list">
+                <li>Expert knowledge of Tempe, Phoenix, Scottsdale & East Valley markets</li>
+                <li>Specialized in probate and inherited property sales</li>
+                <li>Clear, transparent communication throughout the process</li>
+                <li>Strong negotiation skills that protect your interests</li>
+                <li>Professional network of contractors and service providers</li>
+                <li>Personalized strategy tailored to your situation</li>
+            </ul>
+        </div>
+
+        <div class="about-image">
+            <img id="about-img" src="" alt="David Small Professional Portrait" onerror="this.textContent='Professional Photo Placeholder'">
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+    <div class="section-header">
+        <h2 class="section-title">Comprehensive Services</h2>
+        <p class="section-subtitle">Solutions for Every Real Estate Need</p>
+    </div>
+
+    <div class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">🏡</div>
+            <h3>Buying a Home</h3>
+            <p>Find your perfect Arizona home with expert guidance. From property search to financing and closing, we handle it all.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Selling a Home</h3>
+            <p>Maximize your property's value with strategic marketing, expert staging advice, and skilled negotiations.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>Inherited Properties</h3>
+            <p>Selling an inherited home? We coordinate with family, handle all details, and ensure a smooth process.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">⚖️</div>
+            <h3>Probate Real Estate</h3>
+            <p>Navigate probate sales with confidence. We manage legal requirements, inspections, and everything in between.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">✈️</div>
+            <h3>Out-of-State Sellers</h3>
+            <p>Selling from afar? We handle property inspections, repairs, marketing, and closing remotely.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💰</div>
+            <h3>Home Valuations</h3>
+            <p>Get an accurate property valuation to guide your selling strategy and price competitively.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📍</div>
+            <h3>Relocation Services</h3>
+            <p>Moving to Arizona? We help you find the right neighborhood, home, and community.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📝</div>
+            <h3>Contract Support</h3>
+            <p>Expert contract negotiation and review. We ensure favorable terms and protect your interests.</p>
+            <button class="btn btn-primary" onclick="scrollToSection('contact')">Learn More</button>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Section -->
+<section id="why">
+    <div class="section-header">
+        <h2 class="section-title">Why Clients Choose David</h2>
+        <p class="section-subtitle">Proven Excellence in Arizona Real Estate</p>
+    </div>
+
+    <div class="benefits-grid">
+        <div class="benefit-card">
+            <h4>Clear Communication</h4>
+            <p>You'll always know what's happening. Regular updates and transparent information throughout the entire process.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h4>Market Expertise</h4>
+            <p>Deep knowledge of Tempe, Phoenix, Scottsdale, Mesa, Chandler, Gilbert & the entire East Valley.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h4>Probate Specialization</h4>
+            <p>Years of experience helping families navigate inherited and probate property sales with compassion.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h4>Out-of-State Support</h4>
+            <p>Selling from distance? We manage everything remotely and keep you informed at every step.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h4>Professional Network</h4>
+            <p>Connections with contractors, inspectors, and service providers to prepare your home professionally.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h4>Negotiation Skills</h4>
+            <p>Expert negotiator who advocates for your interests and secures favorable terms.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h4>Strategic Preparation</h4>
+            <p>Expert guidance on staging, repairs, and presentation to maximize your property's value.</p>
+        </div>
+
+        <div class="benefit-card">
+            <h4>Personalized Approach</h4>
+            <p>Your situation is unique. You receive customized guidance tailored to your specific goals.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Probate Section -->
+<section id="probate">
+    <div class="section-header">
+        <h2 class="section-title">Probate & Inherited Property Sales</h2>
+        <p class="section-subtitle">Expert Guidance Through Every Step</p>
+    </div>
+
+    <div class="probate-grid">
+        <div class="probate-content">
+            <h3>Turning Complexity Into Clarity</h3>
+            <p>Selling an inherited or probate property involves unique challenges—coordinating with family, managing timelines, handling legal requirements. David's extensive experience makes the process manageable and transparent.</p>
+
+            <h3 style="margin-top: 2rem;">How We Help:</h3>
+            <ul class="probate-list">
+                <li>Guide you through probate and inheritance processes</li>
+                <li>Coordinate with family members and beneficiaries</li>
+                <li>Work with title companies and handle legal requirements</li>
+                <li>Manage property inspections, appraisals, and repairs</li>
+                <li>Coordinate contractors and service providers</li>
+                <li>Professional staging and photography</li>
+                <li>Strategic marketing to qualified buyers</li>
+                <li>Skilled negotiation for the best terms</li>
+                <li>Seamless closing and final coordination</li>
+            </ul>
+
+            <button class="btn btn-primary" style="margin-top: 2rem;" onclick="scrollToSection('contact')">Get Help Now</button>
+        </div>
+
+        <div class="probate-image">
+            <img id="probate-img" src="" alt="Probate Property Consultation" onerror="this.textContent='Consultation Photo Placeholder'">
+        </div>
+    </div>
+</section>
+
+<!-- Reviews Section -->
+<section id="reviews">
+    <div class="section-header">
+        <h2 class="section-title">What Clients Say</h2>
+        <p class="section-subtitle">Real Reviews From Real Clients</p>
+    </div>
+
+    <div class="reviews-stats">
+        <div class="stat-item">
+            <div class="stat-number">5.0</div>
+            <div class="stat-label">Google Rating</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">28</div>
+            <div class="stat-label">Reviews</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">5-Star Rated</div>
+        </div>
+    </div>
+
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"David was invaluable in selling the property I inherited from my parents. I was over 1000 miles away, and his help was key. He made the process very easy and was always available."</p>
+            <p class="review-author">— Kimberly Novosel</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"My experience with David exceeded all expectations. He was able to help me sell my aunt's house without any hiccups. His knowledge of the area is excellent."</p>
+            <p class="review-author">— Connie Hill, Local Guide</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"David did a fantastic job assisting with selling my parents' home while living across the country. He facilitated all contractors needed. He made a stressful time very easy."</p>
+            <p class="review-author">— Rick Conner</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"David helped me sell inherited houses from my father's estate. He navigated the probate process expertly and negotiated with buyers on our behalf!"</p>
+            <p class="review-author">— Israel Duarte</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"David was professional and his expertise was impressive. He connected me with a great lender. I was able to get into a home easily and stress-free."</p>
+            <p class="review-author">— Gabe Catalan, Local Guide</p>
+        </div>
+
+        <div class="review-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-text">"David is the best real estate agent I have ever dealt with. He values his clients professionally and helpfully. He manages to answer questions with utmost knowledge."</p>
+            <p class="review-author">— Rudy Molina</p>
+        </div>
+    </div>
+</section>
+
+<!-- Service Areas -->
+<section id="areas">
+    <div class="section-header">
+        <h2 class="section-title">Service Areas</h2>
+        <p class="section-subtitle">Serving Greater Phoenix with Expertise</p>
+    </div>
+
+    <div class="areas-grid">
+        <div class="area-item"><h4>Tempe</h4></div>
+        <div class="area-item"><h4>Phoenix</h4></div>
+        <div class="area-item"><h4>Scottsdale</h4></div>
+        <div class="area-item"><h4>Mesa</h4></div>
+        <div class="area-item"><h4>Chandler</h4></div>
+        <div class="area-item"><h4>Gilbert</h4></div>
+        <div class="area-item"><h4>East Valley</h4></div>
+        <div class="area-item"><h4>Greater Phoenix</h4></div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2 class="section-title">Ready to Get Started?</h2>
+    <p class="section-subtitle">Schedule a consultation with David today</p>
+
+    <div class="contact-grid">
+        <div class="contact-info">
+            <div class="info-block">
+                <h4>☎️ Call Directly</h4>
+                <p><a href="tel:+16028826257">+1 602-882-6257</a></p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Available Monday–Sunday, 8 AM–7 PM</p>
+            </div>
+
+            <div class="info-block">
+                <h4>📍 Office Location</h4>
+                <p>670 W Fremont Dr<br>Tempe, AZ 85282<br>United States</p>
+                <p><a href="https://www.google.com/maps/place/670+W+Fremont+Dr,+Tempe,+AZ+85282" target="_blank">Get Directions →</a></p>
+            </div>
+
+            <div class="info-block">
+                <h4>⏰ Hours</h4>
+                <p>Monday – Sunday<br>8:00 AM – 7:00 PM</p>
+                <p style="font-size: 0.9rem; margin-top: 0.5rem;">Available for virtual consultations</p>
+            </div>
+        </div>
+
+        <form class="contact-form" onsubmit="handleFormSubmit(event)">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Service Type *</label>
+                <select id="service" name="service" required>
+                    <option value="">Select a service...</option>
+                    <option value="buying">Buying a Home</option>
+                    <option value="selling">Selling a Home</option>
+                    <option value="inherited">Inherited Property</option>
+                    <option value="probate">Probate Real Estate</option>
+                    <option value="valuation">Home Valuation</option>
+                    <option value="relocation">Relocation Services</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="property">Property Address or City</label>
+                <input type="text" id="property" name="property">
+            </div>
+
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell David about your situation..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Request Consultation</button>
+            <p style="text-align: center; color: #666; font-size: 0.9rem; margin-top: 1rem;">For faster response, call +1 602-882-6257</p>
+        </form>
+    </div>
+
+    <!-- Map -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3324.8743762556005!2d-111.93719!3d33.4232!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872b7c1c8e8e8e8d%3A0x1b8c8c8c8c8c8c8c!2s670%20W%20Fremont%20Dr%2C%20Tempe%2C%20AZ%2085282!5e0!3m2!1sen!2sus!4v" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>David Small</h4>
+            <p>Premium Real Estate Services in Arizona</p>
+        </div>
+
+        <div class="footer-section">
+            <h4>Navigation</h4>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#probate">Probate</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Services</h4>
+            <ul>
+                <li><a href="#services">Buying a Home</a></li>
+                <li><a href="#services">Selling a Home</a></li>
+                <li><a href="#services">Probate Sales</a></li>
+                <li><a href="#services">Inherited Properties</a></li>
+                <li><a href="#services">Relocation Services</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h4>Contact</h4>
+            <ul>
+                <li><a href="tel:+16028826257">📞 +1 602-882-6257</a></li>
+                <li><a href="https://www.google.com/maps/place/670+W+Fremont+Dr,+Tempe,+AZ+85282" target="_blank">📍 Tempe, AZ</a></li>
+                <li>Mon–Sun: 8 AM–7 PM</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2024 David Small Realtor. All rights reserved. | Tempe, Phoenix, Scottsdale & Greater Phoenix Area</p>
+    </div>
+</footer>
+
+<!-- Mobile CTA Button -->
+<a href="tel:+16028826257" class="mobile-cta" title="Call David Small">☎️</a>
+
+<script>
+    function scrollToSection(sectionId) {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const service = document.getElementById('service').value;
+
+        alert(`Thank you, ${name}!\n\nDavid will contact you at ${phone} shortly.\n\nFor immediate assistance: +1 602-882-6257`);
+        event.target.reset();
+    }
+
+    // Smooth navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                scrollToSection(href.substring(1));
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
