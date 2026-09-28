@@ -1127,23 +1127,21 @@
             const service = document.querySelectorAll('input[type="text"]')[1].value;
             const message = document.querySelector('textarea').value;
 
-            // Create message
-            let msg = `Hello Billy Tire Shop 2!\n\nCustomer Name: ${name}\nCustomer Phone: ${phone}\nService Needed: ${service}`;
+            // Create SMS message
+            let smsText = `Hello Billy Tire Shop 2! I'm ${name}. I need ${service}. My phone: ${phone}`;
             if (message) {
-                msg += `\nMessage: ${message}`;
+                smsText += `. ${message}`;
             }
 
-            // Create WhatsApp link (alternative option)
-            const whatsappMsg = encodeURIComponent(msg);
-            const whatsappLink = `https://wa.me/12512621083?text=${whatsappMsg}`;
+            // Send SMS via default messaging app
+            const smsLink = `sms:+12512621083?body=${encodeURIComponent(smsText)}`;
+            window.location.href = smsLink;
 
-            // For now, direct call
-            alert(`Thank you ${name}!\n\nPlease call us at:\n📞 +1 251-262-1083\n\nOr send a message with your inquiry. We'll respond quickly!`);
-
-            // Optional: Uncomment to open WhatsApp
-            // window.open(whatsappLink, '_blank');
-
-            e.target.reset();
+            // Show confirmation
+            setTimeout(() => {
+                alert(`Message ready to send via SMS!\n\nReplies will come to: ${phone}`);
+                e.target.reset();
+            }, 500);
         }
     </script>
 </body>
