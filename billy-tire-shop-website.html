@@ -1190,5 +1190,17 @@
             }, 500);
         }
     </script>
+
+    <script>
+        // Parallax scrolling effect for hero section
+        const hero = document.querySelector('.hero');
+        window.addEventListener('scroll', function() {
+            if (hero) {
+                let scrollPos = window.scrollY;
+                hero.style.backgroundPosition = '0px ' + (scrollPos * 0.5) + 'px';
+            }
+        });
+    </script>
+
 </body>
 </html>
