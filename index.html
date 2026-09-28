@@ -377,14 +377,32 @@
             position: relative;
             overflow: hidden;
             border-radius: 12px;
-            height: 280px;
+            height: 300px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s;
+            background: linear-gradient(135deg, #0052cc 0%, #003d82 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 2rem;
         }
 
         .gallery-item:hover {
             transform: scale(1.05);
             box-shadow: 0 15px 40px rgba(0, 82, 204, 0.2);
+        }
+
+        .gallery-item-content {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .gallery-item-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
         }
 
         .gallery-item img {
@@ -875,11 +893,11 @@
                 <p>David specializes in out-of-state sellers, inherited properties, and probate real estate. He manages every detail so you can focus on what matters most.</p>
                 <button class="btn btn-primary" onclick="scrollToSection('contact')" style="margin-top: 1.5rem;">Get in Touch</button>
             </div>
-            <div class="about-image" style="background: linear-gradient(135deg, #0052cc 0%, #003d82 100%); display: flex; align-items: center; justify-content: center; color: white;">
+            <div class="about-image">
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">👨‍💼</div>
-                    <div style="font-size: 1.3rem; font-weight: 600;">David Small</div>
-                    <div style="font-size: 0.95rem; opacity: 0.8; margin-top: 0.5rem;">Arizona Real Estate Professional</div>
+                    <div style="font-size: 4rem; margin-bottom: 1.5rem;">👨‍💼</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">David Small</div>
+                    <div style="font-size: 1rem; opacity: 0.9;">Arizona Real Estate Professional</div>
                 </div>
             </div>
         </div>
@@ -938,11 +956,17 @@
         <h2 class="section-title">Featured Properties</h2>
         <p class="section-subtitle">Quality homes throughout the Phoenix area</p>
         <div class="gallery-grid">
-            <div class="gallery-item" style="background: linear-gradient(135deg, #0052cc 0%, #003d82 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600;">
-                <span>Modern Arizona Homes</span>
+            <div class="gallery-item">
+                <div class="gallery-item-content">
+                    <span class="gallery-item-icon">🏡</span>
+                    <div>Modern Arizona Homes</div>
+                </div>
             </div>
-            <div class="gallery-item" style="background: linear-gradient(135deg, #003d82 0%, #0052cc 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 600;">
-                <span>Beautiful Phoenix Properties</span>
+            <div class="gallery-item">
+                <div class="gallery-item-content">
+                    <span class="gallery-item-icon">🏠</span>
+                    <div>Beautiful Phoenix Properties</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1014,11 +1038,11 @@
                 </ul>
                 <button class="btn btn-primary" onclick="scrollToSection('contact')" style="margin-top: 2rem; background: var(--white); color: var(--primary-blue);">Get Probate Help</button>
             </div>
-            <div class="probate-image" style="background: linear-gradient(135deg, #0052cc 0%, #003d82 100%); display: flex; align-items: center; justify-content: center; color: white;">
+            <div class="probate-image">
                 <div style="text-align: center;">
-                    <div style="font-size: 3rem; margin-bottom: 1rem;">📋</div>
-                    <div style="font-size: 1.3rem; font-weight: 600;">Probate & Estate</div>
-                    <div style="font-size: 0.95rem; opacity: 0.8; margin-top: 0.5rem;">Expert Guidance for Inherited Properties</div>
+                    <div style="font-size: 4rem; margin-bottom: 1.5rem;">📋</div>
+                    <div style="font-size: 1.5rem; font-weight: 700; margin-bottom: 0.5rem;">Probate & Estate</div>
+                    <div style="font-size: 1rem; opacity: 0.9;">Expert Guidance for Inherited Properties</div>
                 </div>
             </div>
         </div>
