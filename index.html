@@ -304,6 +304,39 @@
             font-size: 1.2rem;
         }
 
+        .stats-bar {
+            display: flex;
+            gap: 3rem;
+            justify-content: center;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 15px;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--gold);
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+        }
+
         /* Section Styling */
         section {
             padding: 5rem 2rem;
@@ -1125,6 +1158,7 @@
                 <li><a href="#services">Services</a></li>
                 <li><a href="#properties">Properties</a></li>
                 <li><a href="#sold">Recently Sold</a></li>
+                <li><a href="#team">Team</a></li>
                 <li><a href="#areas">Areas</a></li>
                 <li><a href="#testimonials">Reviews</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1148,8 +1182,26 @@
             </div>
             <div class="trust-bar">
                 <div class="trust-item">5.0 Rated Agent</div>
-                <div class="trust-item">26 Client Reviews</div>
+                <div class="trust-item">34 Client Reviews</div>
                 <div class="trust-item">San Diego Coastal Real Estate</div>
+            </div>
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <div class="stat-number">44</div>
+                    <div class="stat-label">Sales (Last 12 Months)</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">142</div>
+                    <div class="stat-label">Total Sales</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">$1.5M</div>
+                    <div class="stat-label">Average Price</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">16</div>
+                    <div class="stat-label">Service Areas</div>
+                </div>
             </div>
         </div>
     </section>
@@ -1163,11 +1215,11 @@
                 </div>
                 <div class="about-text">
                     <h2>Local Expertise. Personal Service. Exceptional Results.</h2>
-                    <p>David Thayer and the Thayer Coastal Homes team provide thoughtful, responsive, and highly personalized real estate guidance for buyers and sellers throughout San Diego's coastal communities.</p>
-                    <p>With deep roots in the San Diego market and a commitment to understanding each client's unique goals, we deliver results that exceed expectations. Whether you're buying your dream coastal home or selling a cherished property, our experienced team is here to guide you every step of the way.</p>
+                    <p>David Thayer leads the Thayer Coastal Homes team, providing thoughtful, responsive, and highly personalized real estate guidance for buyers and sellers throughout San Diego's coastal communities. Working alongside talented team members like Brett Preston, we combine expertise with genuine care for each client.</p>
+                    <p>With deep roots in the San Diego market and over 142 total sales, we deliver results that exceed expectations. Whether you're buying your dream coastal home or selling a cherished property, our experienced team is here to guide you every step of the way.</p>
                     <ul class="values-list">
                         <li>Consistent communication</li>
-                        <li>Local market expertise</li>
+                        <li>Local market expertise (44 sales in last 12 months)</li>
                         <li>Strong negotiation skills</li>
                         <li>Attention to detail</li>
                         <li>Personalized service from start to finish</li>
@@ -1337,7 +1389,7 @@
             <h2 class="section-title">What Our Clients Say</h2>
             <div class="rating-display">
                 <div class="stars">★★★★★</div>
-                <div class="rating-text">5.0 Rating • 26 Client Reviews</div>
+                <div class="rating-text">5.0 Rating • 34 Client Reviews</div>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -1363,6 +1415,32 @@
             </div>
             <div style="text-align: center;">
                 <a href="#contact" class="btn btn-primary">Read More Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" style="background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%); color: white;">
+        <div class="container">
+            <h2 class="section-title" style="color: white; margin-bottom: 1rem;">Meet Our Team</h2>
+            <p class="section-subtitle" style="color: rgba(255, 255, 255, 0.9);">Experienced professionals dedicated to your real estate success</p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div style="background: rgba(255, 255, 255, 0.08); padding: 2rem; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.3); text-align: center; transition: var(--transition);" class="team-member">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--gold);">David Thayer</h3>
+                    <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">Lead Agent & Founder</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.75); line-height: 1.6;">San Diego native with extensive coastal market knowledge and passion for helping clients achieve their real estate goals.</p>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                        <p style="font-size: 0.85rem; color: var(--gold); font-weight: 600;">5.0 Rating • Multiple Awards</p>
+                    </div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.08); padding: 2rem; border-radius: 12px; border: 1px solid rgba(212, 175, 55, 0.3); text-align: center; transition: var(--transition);" class="team-member">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--gold);">Brett Preston</h3>
+                    <p style="font-size: 0.95rem; color: rgba(255, 255, 255, 0.8); margin-bottom: 1rem;">Senior Agent</p>
+                    <p style="font-size: 0.9rem; color: rgba(255, 255, 255, 0.75); line-height: 1.6;">Exceptional negotiator and client advocate with 42 sales in the last 12 months. Known for outstanding communication and detail-oriented service.</p>
+                    <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(212, 175, 55, 0.2);">
+                        <p style="font-size: 0.85rem; color: var(--gold); font-weight: 600;">5.0 Rating • 42 Sales/Year</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1490,6 +1568,7 @@
                     <a href="#services">Services</a><br>
                     <a href="#properties">Properties</a><br>
                     <a href="#sold">Recently Sold</a><br>
+                    <a href="#team">Team</a><br>
                     <a href="#areas">Service Areas</a><br>
                     <a href="#testimonials">Reviews</a><br>
                     <a href="#contact">Contact</a>
