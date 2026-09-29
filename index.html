@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="David Thayer - San Diego Real Estate Agent specializing in luxury coastal homes. Expert guidance for buying, selling, and relocating to La Jolla, San Diego, and surrounding coastal communities.">
+    <meta name="keywords" content="San Diego real estate, La Jolla homes, real estate agent, buy homes, sell property, coastal real estate">
+    <meta property="og:title" content="David Thayer | Thayer Coastal Homes | San Diego Real Estate Agent">
+    <meta property="og:description" content="Premium real estate services in San Diego. Specializing in coastal communities including La Jolla, Del Mar, Pacific Beach, and Coronado.">
+    <meta property="og:image" content="./images/1.jpg">
+    <meta property="og:url" content="https://thayercoastalhomes.com">
+    <meta name="theme-color" content="#1a3a52">
+    <title>David Thayer | San Diego Real Estate Agent | Thayer Coastal Homes</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1a3a52;
+            --ivory: #f8f6f3;
+            --beige: #c9b8a8;
+            --gray: #a0a0a0;
+            --gold: #d4af37;
+            --light-gray: #f5f5f5;
+            --text-dark: #2c2c2c;
+            --border-color: #e8e8e8;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: white;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: transparent;
+            z-index: 1000;
+            transition: var(--transition);
+            padding: 1.5rem 0;
+        }
+
+        nav.scrolled {
+            background: rgba(26, 58, 82, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 0.75rem 0;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .cta-btn {
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .cta-btn:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(26, 58, 82, 0.7) 0%, rgba(26, 58, 82, 0.5) 100%), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:%231a3a52;stop-opacity:0.8" /><stop offset="100%" style="stop-color:%232d5a7f;stop-opacity:0.6" /></linearGradient></defs><rect width="1200" height="600" fill="url(%23grad)"/><path d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z" fill="%23f8f6f3" opacity="0.1"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            text-align: center;
+            max-width: 800px;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            cursor: pointer;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border-color: white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-3px);
+        }
+
+        .trust-bar {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            color: var(--navy);
+            font-weight: 600;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .trust-item::before {
+            content: '★';
+            color: var(--gold);
+            font-size: 1.2rem;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 5rem 2rem;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--navy);
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* About Section */
+        #about {
+            background: linear-gradient(to right, rgba(201, 184, 168, 0.08) 0%, transparent 50%);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .values-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .values-list li {
+            padding: 0.75rem 0 0.75rem 2.5rem;
+            position: relative;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .values-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Services Section */
+        #services {
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: var(--transition);
+            border-top: 4px solid var(--navy);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+            border-top-color: var(--gold);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            line-height: 1.8;
+        }
+
+        /* Properties Section */
+        #properties {
+            background: white;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .property-card {
+            border-radius: 12px;
+            overflow: hidden;
+            background: white;
+            transition: var(--transition);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .property-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .property-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--beige) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .sample-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--gold);
+            color: var(--navy);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .property-info {
+            padding: 1.5rem;
+        }
+
+        .property-price {
+            font-size: 1.8rem;
+            color: var(--navy);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .property-details {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+
+        .property-detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .property-location {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .property-card .btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Why Choose Us */
+        #why-us {
+            background: linear-gradient(135deg, var(--navy) 0%, #2d5a7f 100%);
+            color: white;
+        }
+
+        #why-us .section-title {
+            color: white;
+        }
+
+        #why-us .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-box {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: var(--transition);
+        }
+
+        .feature-box:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--gold);
+        }
+
+        .feature-box h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: white;
+        }
+
+        .feature-box p {
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background: var(--light-gray);
+        }
+
+        .rating-display {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .stars {
+            font-size: 2rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+            letter-spacing: 3px;
+        }
+
+        .rating-text {
+            font-size: 1.2rem;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--gold);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-text {
+            color: var(--text-dark);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        /* Service Areas */
+        #areas {
+            background: white;
+        }
+
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .area-card {
+            background: linear-gradient(135deg, var(--navy) 0%, #2d5a7f 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .area-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(26, 58, 82, 0.3);
+        }
+
+        .area-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(to right, rgba(201, 184, 168, 0.08) 0%, transparent 50%);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--navy);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input.error,
+        .form-group select.error,
+        .form-group textarea.error {
+            border-color: #d9534f;
+        }
+
+        .error-message {
+            color: #d9534f;
+            font-size: 0.85rem;
+            margin-top: 0.3rem;
+        }
+
+        .contact-submit {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: var(--gold);
+            color: var(--navy);
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .contact-submit:hover {
+            background: white;
+            color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-box h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .info-box p {
+            color: var(--text-dark);
+            line-height: 1.8;
+        }
+
+        .phone-btn {
+            display: inline-block;
+            background: var(--navy);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: var(--transition);
+        }
+
+        .phone-btn:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--navy);
+            color: white;
+            padding: 3rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: var(--gold);
+            font-size: 1.1rem;
+        }
+
+        .footer-section a,
+        .footer-section p {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            line-height: 1.8;
+            transition: var(--transition);
+        }
+
+        .footer-section a:hover {
+            color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 600;
+        }
+
+        .social-icon:hover {
+            background: var(--gold);
+            color: var(--navy);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--navy);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .trust-bar {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .logo {
+                font-size: 1.2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .features-grid,
+            .services-grid,
+            .properties-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .property-image {
+                height: 200px;
+            }
+        }
+
+        /* Smooth transitions */
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Click to call */
+        .call-btn {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+            z-index: 999;
+            transition: var(--transition);
+        }
+
+        .call-btn:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 768px) {
+            .call-btn {
+                display: flex !important;
+            }
+        }
+
+        /* Success message */
+        .form-success {
+            display: none;
+            background: #5cb85c;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .form-success.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Thayer Coastal Homes</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#areas">Areas</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Exceptional Coastal Living Starts Here</h1>
+            <p>Personalized real estate guidance for buying and selling exceptional homes across San Diego.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+                <a href="#properties" class="btn btn-secondary">Explore San Diego Homes</a>
+            </div>
+            <div class="trust-bar">
+                <div class="trust-item">5.0 Rated Agent</div>
+                <div class="trust-item">26 Client Reviews</div>
+                <div class="trust-item">San Diego Coastal Real Estate</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="./images/1.jpg" alt="David Thayer, San Diego Real Estate Agent">
+                </div>
+                <div class="about-text">
+                    <h2>Local Expertise. Personal Service. Exceptional Results.</h2>
+                    <p>David Thayer and the Thayer Coastal Homes team provide thoughtful, responsive, and highly personalized real estate guidance for buyers and sellers throughout San Diego's coastal communities.</p>
+                    <p>With deep roots in the San Diego market and a commitment to understanding each client's unique goals, we deliver results that exceed expectations. Whether you're buying your dream coastal home or selling a cherished property, our experienced team is here to guide you every step of the way.</p>
+                    <ul class="values-list">
+                        <li>Consistent communication</li>
+                        <li>Local market expertise</li>
+                        <li>Strong negotiation skills</li>
+                        <li>Attention to detail</li>
+                        <li>Personalized service from start to finish</li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="display: inline-block;">Meet David</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <p class="section-subtitle">Expert guidance tailored to your real estate needs</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🏠</div>
+                    <h3>Buying a Home</h3>
+                    <p>Find the right home with expert guidance, local insight, and a strategy tailored to your goals.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔑</div>
+                    <h3>Selling a Home</h3>
+                    <p>Position your property for maximum exposure, stronger offers, and a smooth, well-managed sale.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌊</div>
+                    <h3>Coastal Relocation</h3>
+                    <p>Make your move to San Diego easier with personalized guidance on neighborhoods, properties, and the local lifestyle.</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#contact" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties Section -->
+    <section id="properties">
+        <div class="container">
+            <h2 class="section-title">Explore Exceptional San Diego Properties</h2>
+            <p class="section-subtitle">Curated listings showcasing the finest coastal homes</p>
+            <div class="properties-grid">
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="sample-badge">Sample Listing</span>
+                        🏡
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$3,850,000</div>
+                        <div class="property-details">
+                            <div class="property-detail-item">4 Beds</div>
+                            <div class="property-detail-item">3.5 Baths</div>
+                            <div class="property-detail-item">4,200 Sq Ft</div>
+                        </div>
+                        <div class="property-location">La Jolla, CA</div>
+                        <a href="#contact" class="btn btn-primary">View Property</a>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="sample-badge">Sample Listing</span>
+                        🏖️
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$2,650,000</div>
+                        <div class="property-details">
+                            <div class="property-detail-item">3 Beds</div>
+                            <div class="property-detail-item">3 Baths</div>
+                            <div class="property-detail-item">3,100 Sq Ft</div>
+                        </div>
+                        <div class="property-location">Del Mar, CA</div>
+                        <a href="#contact" class="btn btn-primary">View Property</a>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="sample-badge">Sample Listing</span>
+                        🌅
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$1,950,000</div>
+                        <div class="property-details">
+                            <div class="property-detail-item">3 Beds</div>
+                            <div class="property-detail-item">2.5 Baths</div>
+                            <div class="property-detail-item">2,800 Sq Ft</div>
+                        </div>
+                        <div class="property-location">Pacific Beach, CA</div>
+                        <a href="#contact" class="btn btn-primary">View Property</a>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="sample-badge">Sample Listing</span>
+                        🏰
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$4,200,000</div>
+                        <div class="property-details">
+                            <div class="property-detail-item">5 Beds</div>
+                            <div class="property-detail-item">4 Baths</div>
+                            <div class="property-detail-item">5,000 Sq Ft</div>
+                        </div>
+                        <div class="property-location">Coronado, CA</div>
+                        <a href="#contact" class="btn btn-primary">View Property</a>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="sample-badge">Sample Listing</span>
+                        🌴
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$2,150,000</div>
+                        <div class="property-details">
+                            <div class="property-detail-item">3 Beds</div>
+                            <div class="property-detail-item">3 Baths</div>
+                            <div class="property-detail-item">3,200 Sq Ft</div>
+                        </div>
+                        <div class="property-location">Encinitas, CA</div>
+                        <a href="#contact" class="btn btn-primary">View Property</a>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <div class="property-image">
+                        <span class="sample-badge">Sample Listing</span>
+                        🏝️
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$1,695,000</div>
+                        <div class="property-details">
+                            <div class="property-detail-item">2 Beds</div>
+                            <div class="property-detail-item">2.5 Baths</div>
+                            <div class="property-detail-item">2,400 Sq Ft</div>
+                        </div>
+                        <div class="property-location">Solana Beach, CA</div>
+                        <a href="#contact" class="btn btn-primary">View Property</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us">
+        <div class="container">
+            <h2 class="section-title">A Higher Standard of Real Estate Service</h2>
+            <p class="section-subtitle">Experience the difference of working with true experts</p>
+            <div class="features-grid">
+                <div class="feature-box">
+                    <div class="feature-icon">🗺️</div>
+                    <h3>Local San Diego Knowledge</h3>
+                    <p>Deep understanding of neighborhoods, market trends, and investment opportunities across coastal communities.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">📢</div>
+                    <h3>Strategic Marketing</h3>
+                    <p>Comprehensive marketing strategies that maximize exposure and attract qualified buyers to your property.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Skilled Negotiations</h3>
+                    <p>Expert negotiation skills to secure the best possible terms for both buyers and sellers.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">💬</div>
+                    <h3>Clear Communication</h3>
+                    <p>Consistent, transparent communication throughout the entire buying or selling process.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">✅</div>
+                    <h3>Detail-Oriented Service</h3>
+                    <p>Meticulous attention to every detail ensures a smooth and successful real estate transaction.</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">❤️</div>
+                    <h3>Client-First Approach</h3>
+                    <p>Your goals and satisfaction are at the center of everything we do.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Clients Say</h2>
+            <div class="rating-display">
+                <div class="stars">★★★★★</div>
+                <div class="rating-text">5.0 Rating • 26 Client Reviews</div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The Ritz Carlton like service was wonderful from start to finish!"</p>
+                    <p class="testimonial-author">— Satisfied Client</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Brett's constant communication gave us confidence every step of the way."</p>
+                    <p class="testimonial-author">— Satisfied Client</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"He is the real MVP hands down!"</p>
+                    <p class="testimonial-author">— Satisfied Client</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"David, Brett and team guided us through selling our home and buying our new one. They were fantastic, answering all questions and guiding us through every option."</p>
+                    <p class="testimonial-author">— Satisfied Client</p>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As first-time homebuyers, we were incredibly grateful to have David and Brett guiding us through the process."</p>
+                    <p class="testimonial-author">— Satisfied Client</p>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <a href="#contact" class="btn btn-primary">Read More Reviews</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas Section -->
+    <section id="areas">
+        <div class="container">
+            <h2 class="section-title">Serving San Diego's Coastal Communities</h2>
+            <p class="section-subtitle">Expert service across the region's most desirable neighborhoods</p>
+            <div class="areas-grid">
+                <div class="area-card">
+                    <h3>La Jolla</h3>
+                </div>
+                <div class="area-card">
+                    <h3>San Diego</h3>
+                </div>
+                <div class="area-card">
+                    <h3>Del Mar</h3>
+                </div>
+                <div class="area-card">
+                    <h3>Pacific Beach</h3>
+                </div>
+                <div class="area-card">
+                    <h3>Coronado</h3>
+                </div>
+                <div class="area-card">
+                    <h3>Encinitas</h3>
+                </div>
+                <div class="area-card">
+                    <h3>North County Coastal</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Talk About Your Real Estate Goals</h2>
+            <div class="contact-wrapper">
+                <form class="contact-form" id="contactForm">
+                    <div class="form-success" id="formSuccess">Thank you! We'll be in touch soon.</div>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="purpose">I'm Interested In</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="">Select an option</option>
+                            <option value="buying">Buying a Home</option>
+                            <option value="selling">Selling a Home</option>
+                            <option value="relocating">Relocating to San Diego</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-method">Preferred Contact Method</label>
+                        <select id="contact-method" name="contact-method" required>
+                            <option value="">Select a method</option>
+                            <option value="email">Email</option>
+                            <option value="phone">Phone</option>
+                            <option value="text">Text Message</option>
+                        </select>
+                        <div class="error-message"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <div class="error-message"></div>
+                    </div>
+                    <button type="submit" class="contact-submit">Request a Consultation</button>
+                </form>
+
+                <div class="contact-info">
+                    <div class="info-box">
+                        <h3>📞 Direct Contact</h3>
+                        <p>David Thayer</p>
+                        <p>Thayer Coastal Homes</p>
+                        <a href="tel:+18583422330" class="phone-btn">+1 858-342-2330</a>
+                    </div>
+                    <div class="info-box">
+                        <h3>📍 Office Location</h3>
+                        <p>1111 Prospect St #100</p>
+                        <p>La Jolla, CA 92037</p>
+                        <p>United States</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>⏰ Hours of Operation</h3>
+                        <p>Available 24 Hours</p>
+                        <p style="font-size: 0.9rem; color: var(--gray);">For urgent matters or after-hours inquiries, please call directly.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Thayer Coastal Homes</h3>
+                    <p>David Thayer</p>
+                    <p>San Diego Real Estate Agent</p>
+                    <p>📞 +1 858-342-2330</p>
+                    <p>📍 1111 Prospect St #100, La Jolla, CA 92037</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="#home">Home</a><br>
+                    <a href="#about">About David</a><br>
+                    <a href="#services">Services</a><br>
+                    <a href="#properties">Properties</a><br>
+                    <a href="#areas">Service Areas</a><br>
+                    <a href="#testimonials">Reviews</a><br>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#services">Buying a Home</a><br>
+                    <a href="#services">Selling a Home</a><br>
+                    <a href="#services">Coastal Relocation</a><br>
+                    <a href="#contact">Schedule Consultation</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-links">
+                        <a href="#" class="social-icon" title="Facebook">f</a>
+                        <a href="#" class="social-icon" title="Instagram">📷</a>
+                        <a href="#" class="social-icon" title="LinkedIn">in</a>
+                        <a href="#" class="social-icon" title="Twitter">𝕏</a>
+                    </div>
+                    <p style="margin-top: 1.5rem; font-size: 0.9rem;">© 2026 Thayer Coastal Homes. All rights reserved.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p><strong>Equal Housing Opportunity</strong></p>
+                <p>All properties subject to prior sale. Information deemed reliable but not guaranteed.</p>
+                <p>Privacy Policy • Terms of Use</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Click to Call Button -->
+    <a href="tel:+18583422330" class="call-btn" title="Call David Thayer">📞</a>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Thayer Coastal Homes",
+        "description": "San Diego real estate agent specializing in luxury coastal properties",
+        "telephone": "+1-858-342-2330",
+        "url": "https://thayercoastalhomes.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1111 Prospect St #100",
+            "addressLocality": "La Jolla",
+            "addressRegion": "CA",
+            "postalCode": "92037",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "32.8426",
+            "longitude": "-117.2723"
+        },
+        "rating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "reviewCount": "26"
+        },
+        "image": "./images/1.jpg",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RealEstateAgent",
+        "name": "David Thayer",
+        "jobTitle": "Real Estate Agent",
+        "url": "https://thayercoastalhomes.com",
+        "telephone": "+1-858-342-2330",
+        "areaServed": [
+            "La Jolla",
+            "San Diego",
+            "Del Mar",
+            "Pacific Beach",
+            "Coronado",
+            "Encinitas"
+        ],
+        "knowsAbout": [
+            "Residential Real Estate",
+            "Luxury Homes",
+            "Coastal Properties",
+            "Real Estate Sales",
+            "Home Buying",
+            "Home Selling"
+        ]
+    }
+    </script>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Form validation and submission
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Reset previous errors
+            document.querySelectorAll('.form-group input, .form-group select, .form-group textarea').forEach(field => {
+                field.classList.remove('error');
+                field.parentElement.querySelector('.error-message').textContent = '';
+            });
+
+            let isValid = true;
+
+            // Validate fields
+            const fields = {
+                name: { value: document.getElementById('name').value.trim(), type: 'text' },
+                email: { value: document.getElementById('email').value.trim(), type: 'email' },
+                phone: { value: document.getElementById('phone').value.trim(), type: 'phone' },
+                purpose: { value: document.getElementById('purpose').value, type: 'select' },
+                'contact-method': { value: document.getElementById('contact-method').value, type: 'select' },
+                message: { value: document.getElementById('message').value.trim(), type: 'text' }
+            };
+
+            for (const [key, field] of Object.entries(fields)) {
+                const input = document.getElementById(key);
+                const errorDiv = input.parentElement.querySelector('.error-message');
+
+                if (!field.value) {
+                    input.classList.add('error');
+                    errorDiv.textContent = 'This field is required';
+                    isValid = false;
+                } else if (field.type === 'email' && !isValidEmail(field.value)) {
+                    input.classList.add('error');
+                    errorDiv.textContent = 'Please enter a valid email address';
+                    isValid = false;
+                } else if (field.type === 'phone' && !isValidPhone(field.value)) {
+                    input.classList.add('error');
+                    errorDiv.textContent = 'Please enter a valid phone number';
+                    isValid = false;
+                }
+            }
+
+            if (isValid) {
+                // Simulate form submission (in production, send to backend)
+                formSuccess.classList.add('show');
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    formSuccess.classList.remove('show');
+                }, 5000);
+            }
+        });
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function isValidPhone(phone) {
+            return /^[\d\s\-\+\(\)]+$/.test(phone) && phone.replace(/\D/g, '').length >= 10;
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.service-card, .property-card, .testimonial-card, .feature-box, .area-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
